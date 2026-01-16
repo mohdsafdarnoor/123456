@@ -217,3 +217,40 @@ window.addEventListener('scroll', function() {
     
     lastScroll = currentScroll;
 });
+// FAQ Toggle functionality
+function initFAQs() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQs
+            faqItems.forEach(faq => faq.classList.remove('active'));
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
+
+// Update DOMContentLoaded to include FAQ init
+document.addEventListener('DOMContentLoaded', function() {
+    initAccordions();
+    initToolsSearch();
+    initSmoothScroll();
+    initFAQs();  // Add this line
+    
+    // Set active navigation link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+});

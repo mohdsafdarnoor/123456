@@ -3,8 +3,10 @@ function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const menuBtn = document.querySelector('.mobile-menu-btn');
     
-    mobileMenu.classList.toggle('active');
-    menuBtn.classList.toggle('active');
+    if (mobileMenu && menuBtn) {
+        mobileMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+    }
 }
 
 // Close mobile menu when clicking outside
@@ -15,7 +17,7 @@ document.addEventListener('click', function(event) {
     if (mobileMenu && mobileMenu.classList.contains('active')) {
         if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
             mobileMenu.classList.remove('active');
-            menuBtn.classList.remove('active');
+            if (menuBtn) menuBtn.classList.remove('active');
         }
     }
 });
@@ -42,25 +44,56 @@ function initAccordions() {
     });
 }
 
-// Search functionality for Tools page
+// FIXED: Search functionality for Tools page
 function initToolsSearch() {
     const searchInput = document.getElementById('toolsSearch');
     
     if (searchInput) {
         searchInput.addEventListener('keyup', function() {
-            const searchTerm = this.value.toLowerCase();
+            const searchTerm = this.value.toLowerCase().trim();
             const toolCards = document.querySelectorAll('.tool-card');
+            let visibleCount = 0;
             
-            toolCards.forEach(card => {
-                const toolName = card.querySelector('.tool-name').textContent.toLowerCase();
-                const toolDescription = card.querySelector('.tool-description').textContent.toLowerCase();
-                
-                if (toolName.includes(searchTerm) || toolDescription.includes(searchTerm)) {
+            // If search is empty, show all tools
+            if (searchTerm === '') {
+                toolCards.forEach(card => {
                     card.style.display = 'block';
+                });
+                return;
+            }
+            
+            // Search through each tool card
+            toolCards.forEach(card => {
+                const toolName = card.querySelector('.tool-name');
+                const toolDescription = card.querySelector('.tool-description');
+                const toolBadge = card.querySelector('.tool-badge');
+                
+                // Get text content safely
+                const nameText = toolName ? toolName.textContent.toLowerCase() : '';
+                const descText = toolDescription ? toolDescription.textContent.toLowerCase() : '';
+                const badgeText = toolBadge ? toolBadge.textContent.toLowerCase() : '';
+                
+                // Check if search term matches
+                if (nameText.includes(searchTerm) || 
+                    descText.includes(searchTerm) || 
+                    badgeText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+            
+            // Optional: Show "no results" message
+            console.log(`Found ${visibleCount} tools matching "${searchTerm}"`);
+        });
+        
+        // Clear search on Escape key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                this.dispatchEvent(new Event('keyup'));
+            }
         });
     }
 }
@@ -84,6 +117,14 @@ function initSmoothScroll() {
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                        const menuBtn = document.querySelector('.mobile-menu-btn');
+                        if (menuBtn) menuBtn.classList.remove('active');
+                    }
                 }
             }
         });
@@ -99,7 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set active navigation link based on current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
             link.classList.add('active');
         }
     });
@@ -111,10 +153,12 @@ window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-    } else {
-        header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+    if (header) {
+        if (currentScroll > 100) {
+            header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+        } else {
+            header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+        }
     }
     
     lastScroll = currentScroll;

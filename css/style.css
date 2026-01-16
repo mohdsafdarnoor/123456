@@ -64,8 +64,8 @@ a:hover {
 
 /* === Header === */
 .header {
-    background: var(--white);
-    border-bottom: 3px solid var(--green);
+    background: var(--green);  /* Changed from white to green */
+    border-bottom: 3px solid var(--anthrazit);  /* Changed border color */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -77,6 +77,90 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);  /* Makes logo white if it's dark */
+}
+
+/* === Desktop Navigation === */
+.nav-desktop {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--white);  /* Changed to white text */
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--anthrazit);  /* Changed hover to dark gray */
+    color: var(--white);
+}
+
+/* === Mobile Menu Button === */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);  /* Changed to white for green background */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* === Mobile Menu === */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 82px;
+    left: 0;
+    right: 0;
+    background: var(--green);  /* Changed to green */
+    border-bottom: 3px solid var(--anthrazit);
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mobile-nav-link {
+    color: var(--white);  /* Changed to white */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: var(--anthrazit);  /* Changed hover color */
+    color: var(--white);
 }
 
 .logo img {

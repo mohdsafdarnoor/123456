@@ -44,58 +44,112 @@ function initAccordions() {
     });
 }
 
-// FIXED: Search functionality for Tools page
+// Enhanced Search functionality with autocomplete for Tools page
 function initToolsSearch() {
     const searchInput = document.getElementById('toolsSearch');
+    const clearBtn = document.getElementById('searchClear');
+    const suggestionsBox = document.getElementById('searchSuggestions');
     
-    if (searchInput) {
-        searchInput.addEventListener('keyup', function() {
-            const searchTerm = this.value.toLowerCase().trim();
-            const toolCards = document.querySelectorAll('.tool-card');
-            let visibleCount = 0;
-            
-            // If search is empty, show all tools
-            if (searchTerm === '') {
-                toolCards.forEach(card => {
-                    card.style.display = 'block';
-                });
-                return;
-            }
-            
-            // Search through each tool card
-            toolCards.forEach(card => {
-                const toolName = card.querySelector('.tool-name');
-                const toolDescription = card.querySelector('.tool-description');
-                const toolBadge = card.querySelector('.tool-badge');
+    if (!searchInput) return;
+    
+    // Get all tool data for suggestions
+    const allTools = [];
+    document.querySelectorAll('.tool-card').forEach(card => {
+        const name = card.querySelector('.tool-name')?.textContent || '';
+        const description = card.querySelector('.tool-description')?.textContent || '';
+        const badge = card.querySelector('.tool-badge')?.textContent || '';
+        
+        allTools.push({
+            element: card,
+            name: name,
+            description: description,
+            badge: badge,
+            searchText: `${name} ${description} ${badge}`.toLowerCase()
+        });
+    });
+    
+    // Search input handler
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase().trim();
+        
+        // Show/hide clear button
+        if (clearBtn) {
+            clearBtn.classList.toggle('active', searchTerm.length > 0);
+        }
+        
+        // If empty, show all and hide suggestions
+        if (searchTerm === '') {
+            allTools.forEach(tool => tool.element.style.display = 'block');
+            if (suggestionsBox) suggestionsBox.classList.remove('active');
+            return;
+        }
+        
+        // Filter tools
+        let visibleCount = 0;
+        const suggestions = [];
+        
+        allTools.forEach(tool => {
+            if (tool.searchText.includes(searchTerm)) {
+                tool.element.style.display = 'block';
+                visibleCount++;
                 
-                // Get text content safely
-                const nameText = toolName ? toolName.textContent.toLowerCase() : '';
-                const descText = toolDescription ? toolDescription.textContent.toLowerCase() : '';
-                const badgeText = toolBadge ? toolBadge.textContent.toLowerCase() : '';
-                
-                // Check if search term matches
-                if (nameText.includes(searchTerm) || 
-                    descText.includes(searchTerm) || 
-                    badgeText.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
+                // Add to suggestions (limit to 5)
+                if (suggestions.length < 5) {
+                    suggestions.push(tool.name);
                 }
-            });
-            
-            // Optional: Show "no results" message
-            console.log(`Found ${visibleCount} tools matching "${searchTerm}"`);
+            } else {
+                tool.element.style.display = 'none';
+            }
         });
         
-        // Clear search on Escape key
-        searchInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                this.value = '';
-                this.dispatchEvent(new Event('keyup'));
-            }
+        // Show suggestions
+        if (suggestionsBox && suggestions.length > 0 && searchTerm.length > 1) {
+            suggestionsBox.innerHTML = '';
+            suggestions.forEach(suggestion => {
+                const item = document.createElement('div');
+                item.className = 'suggestion-item';
+                
+                // Highlight matching text
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                item.innerHTML = suggestion.replace(regex, '<strong>$1</strong>');
+                
+                item.addEventListener('click', () => {
+                    searchInput.value = suggestion;
+                    searchInput.dispatchEvent(new Event('input'));
+                    suggestionsBox.classList.remove('active');
+                });
+                
+                suggestionsBox.appendChild(item);
+            });
+            suggestionsBox.classList.add('active');
+        } else if (suggestionsBox) {
+            suggestionsBox.classList.remove('active');
+        }
+    });
+    
+    // Clear button handler
+    if (clearBtn) {
+        clearBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            searchInput.dispatchEvent(new Event('input'));
+            searchInput.focus();
         });
     }
+    
+    // Clear search on Escape key
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            this.value = '';
+            this.dispatchEvent(new Event('input'));
+        }
+    });
+    
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (suggestionsBox && !searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+            suggestionsBox.classList.remove('active');
+        }
+    });
 }
 
 // Smooth scroll to sections
@@ -157,7 +211,7 @@ window.addEventListener('scroll', function() {
         if (currentScroll > 100) {
             header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
         } else {
-            header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
         }
     }
     

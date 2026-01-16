@@ -64,63 +64,83 @@ a:hover {
 
 /* === Header === */
 .header {
-    background: var(--green);  /* Changed from white to green */
-    border-bottom: 3px solid var(--anthrazit);  /* Changed border color */
+    background: #298729;  /* Exact HS Wismar green */
+    border-bottom: none;  /* HS Wismar has no border */
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    height: 2.5rem;  /* 40px - Exact HS Wismar height */
+    padding: 0 20px;  /* Only horizontal padding */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .logo img {
-    height: 50px;
+    height: 1.875rem;  /* 30px - slightly smaller than header */
     width: auto;
-    filter: brightness(0) invert(1);  /* Makes logo white if it's dark */
+    display: block;
+    filter: brightness(0) invert(1);  /* Makes logo white */
 }
 
 /* === Desktop Navigation === */
 .nav-desktop {
     display: flex;
-    gap: 30px;
+    gap: 0;  /* No gap - links touch each other like HS Wismar */
+    height: 100%;
+    align-items: center;
 }
 
 .nav-link {
-    color: var(--white);  /* Changed to white text */
-    font-weight: bold;
-    font-size: 15px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background 0.3s ease, color 0.3s ease;
+    color: #ffffff;
+    font-weight: 700;  /* Bold like HS Wismar */
+    font-size: 1rem;  /* 16px */
+    line-height: 2.5rem;  /* 40px - same as header height */
+    padding: 0 0.5rem;  /* 8px left/right, 0 top/bottom */
+    text-decoration: none;
+    transition: background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    background-color: #2f3229;  /* Dark gray on hover */
+    color: #ffffff;
+}
+
 .nav-link.active {
-    background: var(--anthrazit);  /* Changed hover to dark gray */
-    color: var(--white);
+    background-color: #2f3229;  /* Dark gray for active */
+    color: #ffffff;
 }
 
 /* === Mobile Menu Button === */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
+    height: 40px;
+    justify-content: center;
 }
 
 .mobile-menu-btn span {
     width: 25px;
     height: 3px;
-    background: var(--white);  /* Changed to white for green background */
+    background: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -129,12 +149,12 @@ a:hover {
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 82px;
+    top: 40px;  /* Changed from 82px to match new header height */
     left: 0;
     right: 0;
-    background: var(--green);  /* Changed to green */
-    border-bottom: 3px solid var(--anthrazit);
-    box-shadow: var(--shadow);
+    background: #298729;
+    border-bottom: 2px solid #2f3229;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
 }
 
@@ -145,22 +165,27 @@ a:hover {
 .mobile-nav {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0;
 }
 
 .mobile-nav-link {
-    color: var(--white);  /* Changed to white */
-    font-weight: bold;
-    font-size: 16px;
-    padding: 12px 16px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-    background: var(--anthrazit);  /* Changed hover color */
-    color: var(--white);
+    background-color: #2f3229;
+    color: #ffffff;
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
 }
 
 .logo img {

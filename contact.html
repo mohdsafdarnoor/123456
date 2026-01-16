@@ -13,16 +13,16 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-    <a href="index.html">
-        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
-    </a>
-</div>
-                
+                    <a href="index.html">
+                        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
+                    </a>
+                </div>
                 <nav class="nav-desktop">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="tools.html" class="nav-link">AI Tools</a>
                     <a href="prompts.html" class="nav-link">AI Prompts</a>
                     <a href="guidelines.html" class="nav-link">Guidelines</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
                     <a href="contact.html" class="nav-link active">Contact</a>
                 </nav>
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -41,6 +41,7 @@
             <a href="tools.html" class="mobile-nav-link">AI Tools</a>
             <a href="prompts.html" class="mobile-nav-link">AI Prompts</a>
             <a href="guidelines.html" class="mobile-nav-link">Guidelines</a>
+            <a href="faqs.html" class="mobile-nav-link">FAQs</a>
             <a href="contact.html" class="mobile-nav-link active">Contact</a>
         </nav>
     </div>
@@ -52,114 +53,92 @@
             <p class="page-description">Have questions or suggestions? We'd love to hear from you!</p>
         </div>
     </section>
-    
-     <!-- FAQ Section -->
-            <div style="margin-top: 60px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <h2 style="color: #339933; margin-bottom: 30px; text-align: center;">Frequently Asked Questions</h2>
-                
-                <div style="margin-bottom: 25px;">
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">Who can use this portal?</h4>
-                    <p style="line-height: 1.6;">This portal is primarily designed for international students at Hochschule Wismar studying International Management, but the resources are useful for any international student in Germany seeking employment.</p>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">Are the AI tools free?</h4>
-                    <p style="line-height: 1.6;">Most tools we've listed offer free versions or free trials. Some have premium features that require payment. We've indicated this where applicable in the tool descriptions.</p>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">Can I suggest new tools or prompts?</h4>
-                    <p style="line-height: 1.6;">Absolutely! Use the contact form above and select "Suggest a new AI tool" to share your recommendations. We regularly update our content based on student feedback.</p>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">Is this an official Hochschule Wismar website?</h4>
-                    <p style="line-height: 1.6;">This is a student project supervised by faculty at Hochschule Wismar. While it's affiliated with the university, always verify critical information with official university departments like the Career Center or International Office.</p>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">How often is the content updated?</h4>
-                    <p style="line-height: 1.6;">We review and update our tool listings and prompts quarterly, or more frequently if we discover outdated information or receive important feedback from users.</p>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">Can I share this portal with friends at other universities?</h4>
-                    <p style="line-height: 1.6;">Yes! While created for Hochschule Wismar students, the resources are valuable for any international student in Germany. Feel free to share the link with your network.</p>
-                </div>
-
-                <div>
-                    <h4 style="color: #2f3229; margin-bottom: 10px;">What should I do if I find incorrect information?</h4>
-                    <p style="line-height: 1.6;">Please report it immediately using the contact form above. Select "Report a technical issue" or "Question about content" and provide details about the error. We'll investigate and correct it as soon as possible.</p>
-                </div>
-            </div>
 
     <!-- Main Content -->
     <main class="contact-section">
         <div class="container">
 
-            <!-- Contact Grid -->
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h3 style="color: #2f3229; margin-bottom: 20px;">Send Us a Message</h3>
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                    <div class="form-row">
                         <div class="form-group">
-                            <label for="name" class="form-label">Your Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required placeholder="John">
                         </div>
-
                         <div class="form-group">
-                            <label for="email" class="form-label">Your Email *</label>
-                            <input type="email" id="email" name="email" class="form-input" required placeholder="john.doe@hs-wismar.de">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" required placeholder="Doe">
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="category" class="form-label">Message Category</label>
-                            <select id="category" name="category" class="form-input">
-                                <option value="question">Question about content</option>
-                                <option value="suggestion">Suggestion for improvement</option>
-                                <option value="tool">Suggest a new AI tool</option>
-                                <option value="bug">Report a technical issue</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="john.doe@hs-wismar.de">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="message" class="form-label">Your Message *</label>
-                            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us what's on your mind..."></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="category" class="form-label">Message Category</label>
+                        <select id="category" name="category" class="form-input">
+                            <option value="question">Question about content</option>
+                            <option value="suggestion">Suggestion for improvement</option>
+                            <option value="tool">Suggest a new AI tool</option>
+                            <option value="bug">Report a technical issue</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-                        <button type="submit" class="form-button">Send Message</button>
-                        
-                        <p style="margin-top: 15px; font-size: 14px; color: #666;">
-                            * Required fields. We typically respond within 2-3 business days.
-                        </p>
-                    </form>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-button">Send Message</button>
+                    
+                    <p class="form-note">
+                        * Required fields. We typically respond within 2-3 business days.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Connect with Hochschule Wismar -->
+            <div class="connect-section">
+                <h2>Connect With Hochschule Wismar</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/school/hochschule-wismar" target="_blank" rel="noopener" class="social-link">
+                        <img src="assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.facebook.com/HSWismar" target="_blank" rel="noopener" class="social-link">
+                        <img src="assets/facebook-icon.png" alt="Facebook" class="social-icon">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/hswismar" target="_blank" rel="noopener" class="social-link">
+                        <img src="assets/instagram-icon.png" alt="Instagram" class="social-icon">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.hs-wismar.de" target="_blank" rel="noopener" class="social-link">
+                        <img src="assets/website-icon.png" alt="Website" class="social-icon">
+                        <span>University Website</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-grid">
+                <div class="info-card">
+                    <h3>Project Team</h3>
+                    <p>This portal is maintained by a team of five International Management Master's students at Hochschule Wismar (2025-2026).</p>
                 </div>
 
-                <!-- About the Project -->
-            <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 50px;">
-                <h2 style="color: #339933; margin-bottom: 20px;">About This Project</h2>
-                <p style="line-height: 1.8; margin-bottom: 15px;">
-                    This AI Job Search Support Portal was created as a student project by a team of five International Management Master's students at Hochschule Wismar. Our goal is to help fellow international students navigate the German job market more effectively by curating AI-powered tools and providing ready-made prompts for every stage of the job search process.
-                </p>
-                <p style="line-height: 1.8; margin-bottom: 15px;">
-                    We understand the unique challenges faced by international students - from language barriers to unfamiliar application processes - and created this resource to make the journey smoother for everyone.
-                </p>
-                <p style="line-height: 1.8;">
-                    <strong>Disclaimer:</strong> This portal is a student-led initiative. While we've carefully researched and curated all content, always verify important information with official sources like your university's Career Service, the Ausländerbehörde (foreigners office), or official government websites.
-                </p>
-            </div>
-                
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h3>Project Team</h3>
-                    <p style="margin-bottom: 20px;">This portal is maintained by a team of five International Management Master's students at Hochschule Wismar (2025-2026).</p>
-
-                    <h3 style="margin-top: 30px;">Academic Supervisor</h3>
+                <div class="info-card">
+                    <h3>Academic Supervisor</h3>
                     <p>Faculty of Business<br>Hochschule Wismar</p>
+                </div>
 
-                    <h3 style="margin-top: 30px;">University Contact</h3>
+                <div class="info-card">
+                    <h3>University Contact</h3>
                     <p>
                         <strong>Hochschule Wismar</strong><br>
                         Philipp-Müller-Straße 14<br>
@@ -170,33 +149,26 @@
                         Email: <a href="mailto:postmaster@hs-wismar.de">postmaster@hs-wismar.de</a><br>
                         Web: <a href="https://www.hs-wismar.de" target="_blank" rel="noopener">www.hs-wismar.de</a>
                     </p>
+                </div>
 
-                    <h3 style="margin-top: 30px;">Career Services</h3>
+                <div class="info-card">
+                    <h3>Career Services</h3>
                     <p>For official career counseling and application support:</p>
                     <p>
                         <strong>Career Center</strong><br>
                         Hochschule Wismar<br>
                         <a href="https://www.hs-wismar.de/studium/career-center" target="_blank" rel="noopener">Visit Career Center</a>
                     </p>
+                </div>
 
-                    <h3 style="margin-top: 30px;">International Office</h3>
+                <div class="info-card">
+                    <h3>International Office</h3>
                     <p>For visa and work permit questions:</p>
                     <p>
                         <strong>International Office</strong><br>
                         Hochschule Wismar<br>
                         <a href="https://www.hs-wismar.de/international" target="_blank" rel="noopener">Visit International Office</a>
                     </p>
-                </div>
-            </div>
-
-            <!-- Social Links -->
-            <div style="margin-top: 50px; text-align: center; padding: 30px; background: #f5f5f5; border-radius: 8px;">
-                <h3 style="color: #2f3229; margin-bottom: 20px;">Connect With Hochschule Wismar</h3>
-                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                    <a href="https://www.linkedin.com/school/hochschule-wismar" target="_blank" rel="noopener" style="color: #339933; font-weight: bold;">LinkedIn</a>
-                    <a href="https://www.facebook.com/HSWismar" target="_blank" rel="noopener" style="color: #339933; font-weight: bold;">Facebook</a>
-                    <a href="https://www.instagram.com/hswismar" target="_blank" rel="noopener" style="color: #339933; font-weight: bold;">Instagram</a>
-                    <a href="https://www.hs-wismar.de" target="_blank" rel="noopener" style="color: #339933; font-weight: bold;">University Website</a>
                 </div>
             </div>
 

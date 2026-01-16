@@ -75,22 +75,21 @@ a:hover {
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 2.5rem;  /* 40px - exact HS Wismar */
+    align-items: stretch;
+    height: 2.5rem;  /* 40px */
     padding: 0;
+    margin: 0;
     max-width: 100%;
-    margin: 0 auto;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    height: 100%;
-    padding-left: 1rem;
+    padding: 0 0 0 2rem;  /* 32px left padding */
 }
 
 .logo img {
-    height: 2.25rem;  /* 36px */
+    height: 1.5rem;  /* 24px */
     width: auto;
     display: block;
 }
@@ -99,35 +98,34 @@ a:hover {
 .nav-desktop {
     display: flex;
     gap: 0;
-    height: 100%;
-    align-items: center;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .nav-link {
-    color: #ffffff !important;  /* Force white text */
+    color: #ffffff;
     font-weight: 700;
     font-size: 1rem;
-    line-height: 2.5rem;  /* 40px */
-    padding: 0 1.25rem;  /* 20px left/right */
+    line-height: 2.5rem;  /* 40px - fills header height */
+    padding: 0 1.5rem;  /* 24px left/right spacing */
+    margin: 0;
     text-decoration: none;
     transition: background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    display: flex;
-    align-items: center;
-    height: 100%;
+    display: block;
+    height: 2.5rem;
     white-space: nowrap;
-    text-align: center;
+    background-color: transparent;
 }
 
 .nav-link:hover {
     background-color: #2f3229;
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .nav-link.active {
     background-color: #2f3229;
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 /* === Mobile Menu Button === */
@@ -138,12 +136,11 @@ a:hover {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    margin-right: 1rem;
+    padding: 8px 16px;
 }
 
 .mobile-menu-btn span {
-    width: 25px;
+    width: 28px;
     height: 3px;
     background: #ffffff;
     border-radius: 2px;
@@ -154,7 +151,7 @@ a:hover {
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 40px;
+    top: 2.5rem;  /* 40px */
     left: 0;
     right: 0;
     background: #298729;
@@ -172,139 +169,29 @@ a:hover {
     flex-direction: column;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 .mobile-nav-link {
-    color: #ffffff !important;
+    color: #ffffff;
     font-weight: 700;
     font-size: 1rem;
-    padding: 0.875rem 1.5rem;
+    padding: 1rem 2rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: block;
+    background-color: transparent;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
     background-color: #2f3229;
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .mobile-nav-link:last-child {
     border-bottom: none;
-}
-
-/* === Responsive Design for Header === */
-@media (max-width: 968px) {
-    .nav-desktop {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-content {
-        height: 3.5rem;  /* 56px - taller on mobile */
-        padding: 0;
-    }
-    
-    .logo {
-        padding-left: 1rem;
-    }
-    
-    .logo img {
-        height: 2.5rem;  /* 40px on mobile */
-    }
-    
-    .mobile-menu {
-        top: 56px;
-    }
-    
-    .mobile-nav-link {
-        padding: 1rem 1.5rem;
-    }
-}
-
-/* === Desktop Navigation === */
-.nav-desktop {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-link {
-    color: var(--anthrazit);
-    font-weight: bold;
-    font-size: 15px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    background: var(--green);
-    color: var(--white);
-}
-
-/* === Mobile Menu Button === */
-.mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.mobile-menu-btn span {
-    width: 25px;
-    height: 3px;
-    background: var(--anthrazit);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* === Mobile Menu === */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 82px;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    border-bottom: 3px solid var(--green);
-    box-shadow: var(--shadow);
-    z-index: 999;
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-.mobile-nav {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.mobile-nav-link {
-    color: var(--anthrazit);
-    font-weight: bold;
-    font-size: 16px;
-    padding: 12px 16px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
-
-.mobile-nav-link:hover,
-.mobile-nav-link.active {
-    background: var(--green);
-    color: var(--white);
 }
 
 /* === Hero Section === */
@@ -641,6 +528,25 @@ a:hover {
     padding: 60px 0;
 }
 
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
 .tools-category {
     margin-bottom: 60px;
 }
@@ -769,7 +675,7 @@ a:hover {
 }
 
 .accordion.active .accordion-content {
-    max-height: 2000px;
+    max-height: 5000px;
 }
 
 .accordion-body {
@@ -929,8 +835,7 @@ a:hover {
 }
 
 /* === Responsive Design === */
-@media (max-width: 768px) {
-    /* Mobile Menu */
+@media (max-width: 968px) {
     .nav-desktop {
         display: none;
     }
@@ -938,8 +843,25 @@ a:hover {
     .mobile-menu-btn {
         display: flex;
     }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        height: 3.5rem;  /* 56px */
+    }
     
-    /* Hero */
+    .logo {
+        padding-left: 1rem;
+    }
+    
+    .logo img {
+        height: 2rem;  /* 32px */
+    }
+    
+    .mobile-menu {
+        top: 3.5rem;  /* 56px */
+    }
+    
     .hero-title {
         font-size: 2rem;
     }
@@ -952,12 +874,10 @@ a:hover {
         font-size: 1rem;
     }
     
-    /* Notice Box */
     .notice-box {
         flex-direction: column;
     }
     
-    /* Grids */
     .categories-grid,
     .steps-grid,
     .links-grid,
@@ -965,12 +885,10 @@ a:hover {
         grid-template-columns: 1fr;
     }
     
-    /* Contact Grid */
     .contact-grid {
         grid-template-columns: 1fr;
     }
     
-    /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
     }

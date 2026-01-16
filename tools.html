@@ -12,18 +12,24 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
+                <!-- Clickable Logo -->
                 <div class="logo">
-    <a href="index.html">
-        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
-    </a>
-</div>
+                    <a href="index.html">
+                        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
                 <nav class="nav-desktop">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="tools.html" class="nav-link active">AI Tools</a>
                     <a href="prompts.html" class="nav-link">AI Prompts</a>
                     <a href="guidelines.html" class="nav-link">Guidelines</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
+                
+                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -40,6 +46,7 @@
             <a href="tools.html" class="mobile-nav-link active">AI Tools</a>
             <a href="prompts.html" class="mobile-nav-link">AI Prompts</a>
             <a href="guidelines.html" class="mobile-nav-link">Guidelines</a>
+            <a href="faqs.html" class="mobile-nav-link">FAQs</a>
             <a href="contact.html" class="mobile-nav-link">Contact</a>
         </nav>
     </div>
@@ -56,19 +63,20 @@
     <main class="tools-section">
         <div class="container">
             <!-- Search Container -->
-<div class="search-container">
-    <div class="search-wrapper">
-        <input 
-            type="text" 
-            id="toolsSearch" 
-            class="search-input" 
-            placeholder="Search tools by name, category, or description..."
-            autocomplete="off"
-        >
-        <button id="searchClear" class="search-clear" aria-label="Clear search">✕</button>
-    </div>
-    <div id="searchSuggestions" class="search-suggestions"></div>
-</div>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input 
+                        type="text" 
+                        id="toolsSearch" 
+                        class="search-input" 
+                        placeholder="Search tools by name, category, or description..."
+                        autocomplete="off"
+                    >
+                    <button id="searchClear" class="search-clear" aria-label="Clear search">✕</button>
+                </div>
+                <div id="searchSuggestions" class="search-suggestions"></div>
+            </div>
+
             <!-- Part-Time Jobs (Werkstudent) -->
             <div class="tools-category" id="werkstudent">
                 <div class="category-header">

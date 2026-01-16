@@ -64,8 +64,8 @@ a:hover {
 
 /* === Header === */
 .header {
-    background: #298729;  /* Exact HS Wismar green */
-    border-bottom: none;  /* HS Wismar has no border */
+    background: #298729;
+    border-bottom: none;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -76,52 +76,58 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 2.5rem;  /* 40px - Exact HS Wismar height */
-    padding: 0 20px;  /* Only horizontal padding */
+    height: 2.5rem;  /* 40px - exact HS Wismar */
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .logo {
     display: flex;
     align-items: center;
     height: 100%;
+    padding-left: 1rem;
 }
 
 .logo img {
-    height: 1.875rem;  /* 30px - slightly smaller than header */
+    height: 2.25rem;  /* 36px */
     width: auto;
     display: block;
-    filter: brightness(0) invert(1);  /* Makes logo white */
 }
 
 /* === Desktop Navigation === */
 .nav-desktop {
     display: flex;
-    gap: 0;  /* No gap - links touch each other like HS Wismar */
+    gap: 0;
     height: 100%;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
-    color: #ffffff;
-    font-weight: 700;  /* Bold like HS Wismar */
-    font-size: 1rem;  /* 16px */
-    line-height: 2.5rem;  /* 40px - same as header height */
-    padding: 0 0.5rem;  /* 8px left/right, 0 top/bottom */
+    color: #ffffff !important;  /* Force white text */
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 2.5rem;  /* 40px */
+    padding: 0 1.25rem;  /* 20px left/right */
     text-decoration: none;
     transition: background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     display: flex;
     align-items: center;
     height: 100%;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .nav-link:hover {
-    background-color: #2f3229;  /* Dark gray on hover */
-    color: #ffffff;
+    background-color: #2f3229;
+    color: #ffffff !important;
 }
 
 .nav-link.active {
-    background-color: #2f3229;  /* Dark gray for active */
-    color: #ffffff;
+    background-color: #2f3229;
+    color: #ffffff !important;
 }
 
 /* === Mobile Menu Button === */
@@ -133,8 +139,7 @@ a:hover {
     border: none;
     cursor: pointer;
     padding: 8px;
-    height: 40px;
-    justify-content: center;
+    margin-right: 1rem;
 }
 
 .mobile-menu-btn span {
@@ -149,7 +154,7 @@ a:hover {
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 40px;  /* Changed from 82px to match new header height */
+    top: 40px;
     left: 0;
     right: 0;
     background: #298729;
@@ -166,31 +171,62 @@ a:hover {
     display: flex;
     flex-direction: column;
     padding: 0;
+    margin: 0;
 }
 
 .mobile-nav-link {
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: 700;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.875rem 1.5rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
     background-color: #2f3229;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .mobile-nav-link:last-child {
     border-bottom: none;
 }
 
-.logo img {
-    height: 50px;
-    width: auto;
+/* === Responsive Design for Header === */
+@media (max-width: 968px) {
+    .nav-desktop {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        height: 3.5rem;  /* 56px - taller on mobile */
+        padding: 0;
+    }
+    
+    .logo {
+        padding-left: 1rem;
+    }
+    
+    .logo img {
+        height: 2.5rem;  /* 40px on mobile */
+    }
+    
+    .mobile-menu {
+        top: 56px;
+    }
+    
+    .mobile-nav-link {
+        padding: 1rem 1.5rem;
+    }
 }
 
 /* === Desktop Navigation === */

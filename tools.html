@@ -1,618 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Directory | Hochschule Wismar</title>
-    <meta name="description" content="Curated AI tools for job search, organized by category and stage">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tools Directory | Hochschule Wismar</title>
+  <meta name="description" content="Curated AI tools for job search, organized by category and stage" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Clickable Logo -->
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="nav-desktop">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="tools.html" class="nav-link active">AI Tools</a>
-                    <a href="prompts.html" class="nav-link">AI Prompts</a>
-                    <a href="guidelines.html" class="nav-link">Guidelines</a>
-                    <a href="faqs.html" class="nav-link">FAQs</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-nav">
-            <a href="index.html" class="mobile-nav-link">Home</a>
-            <a href="tools.html" class="mobile-nav-link active">AI Tools</a>
-            <a href="prompts.html" class="mobile-nav-link">AI Prompts</a>
-            <a href="guidelines.html" class="mobile-nav-link">Guidelines</a>
-            <a href="faqs.html" class="mobile-nav-link">FAQs</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
-        </nav>
+  <!-- Simple header (keep or replace with your existing site header) -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="index.html">Hochschule Wismar</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="tools.html">AI Tools</a>
+        <a href="prompts.html">AI Prompts</a>
+        <a href="guidelines.html">Guidelines</a>
+        <a href="faq.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">AI Tools Directory</h1>
-            <p class="page-description">Discover AI-powered tools organized by job type and search stage</p>
-        </div>
+  <main class="container">
+    <section class="page-hero">
+      <h1>AI Tools</h1>
+      <p>Select a category, then choose a phase to see the tools.</p>
     </section>
 
-    <!-- Main Content -->
-    <main class="tools-section">
-        <div class="container">
-            <!-- Search Container -->
-            <div class="search-container">
-                <div class="search-wrapper">
-                    <input 
-                        type="text" 
-                        id="toolsSearch" 
-                        class="search-input" 
-                        placeholder="Search tools by name, category, or description..."
-                        autocomplete="off"
-                    >
-                    <button id="searchClear" class="search-clear" aria-label="Clear search">✕</button>
-                </div>
-                <div id="searchSuggestions" class="search-suggestions"></div>
+    <!-- LEVEL 1: Category -->
+    <section class="tools-accordion" aria-label="AI tools by category and phase">
+      <!-- Work Student -->
+      <details class="acc acc--lvl1" data-group="categories">
+        <summary class="acc__summary">
+          <span class="acc__title">Work Student</span>
+          <span class="acc__chev" aria-hidden="true">▾</span>
+        </summary>
+
+        <div class="acc__content">
+          <!-- LEVEL 2: Phases -->
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Orientation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item">
+                  <a class="tool-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+                  <p class="tool-desc">Find working student roles, company pages, and recruiters.</p>
+                </li>
+                <li class="tool-item">
+                  <a class="tool-link" href="https://www.stepstone.de/" target="_blank" rel="noopener">StepStone</a>
+                  <p class="tool-desc">Search roles and filter by location and contract type.</p>
+                </li>
+                <li class="tool-item">
+                  <a class="tool-link" href="https://www.indeed.com/" target="_blank" rel="noopener">Indeed</a>
+                  <p class="tool-desc">Job discovery and alerts.</p>
+                </li>
+              </ul>
             </div>
+          </details>
 
-            <!-- Part-Time Jobs (Werkstudent) -->
-            <div class="tools-category" id="werkstudent">
-                <div class="category-header">
-                    <div class="category-header-icon">💼</div>
-                    <h2 class="category-header-title">Part-Time Jobs (Werkstudent)</h2>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin-bottom: 20px;">Orientation - Finding Opportunities</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">LinkedIn Career Explorer</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Understand part-time role options and identify skill gaps for Werkstudent positions.</p>
-                        <a href="https://www.linkedin.com/career-explorer" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">CareerExplorer</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Match your interests with flexible part-time roles suitable for students.</p>
-                        <a href="https://www.careerexplorer.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Indeed</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Broad part-time job discovery platform with extensive German listings.</p>
-                        <a href="https://de.indeed.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">JobMensa</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Germany's leading platform focused specifically on student part-time jobs.</p>
-                        <a href="https://www.jobmensa.de" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">StepStone</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Upload your CV to get recruiter attention for part-time positions.</p>
-                        <a href="https://www.stepstone.de" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Application - CV & Cover Letters</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Canva</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Create simple, clean CVs perfect for part-time student roles.</p>
-                        <a href="https://www.canva.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Resume.io</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Build ATS-friendly resumes that pass automated screening systems.</p>
-                        <a href="https://resume.io" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Simplify</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Fast application autofill and tracking for multiple job applications.</p>
-                        <a href="https://simplify.jobs" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Loop CV</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Automate your part-time job applications across multiple platforms.</p>
-                        <a href="https://www.loopcv.pro" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Interview - Preparation</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Google Interview Warmup</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Practice common interview questions with AI feedback.</p>
-                        <a href="https://grow.google/certificates/interview-warmup" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Interview Lift</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Mock interview practice for quick hiring processes.</p>
-                        <a href="https://interviewlift.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Elevator Pitch Generator</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Craft your 30-second self-introduction for interviews.</p>
-                        <a href="https://elevatorpitchgenerator.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Onboarding - Starting Work</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">ChatGPT</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Help with emails, workplace communication, and learning.</p>
-                        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">DeepL</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Professional German-English translation for workplace communication.</p>
-                        <a href="https://www.deepl.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Google Workspace</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Research your company and role, organize your work.</p>
-                        <a href="https://workspace.google.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Interview Preparation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item">
+                  <a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a>
+                  <p class="tool-desc">Mock interviews, STAR answers, role-specific questions.</p>
+                </li>
+                <li class="tool-item">
+                  <a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a>
+                  <p class="tool-desc">Research company, role requirements, and industry context.</p>
+                </li>
+              </ul>
             </div>
+          </details>
 
-            <!-- Internships -->
-            <div class="tools-category" id="internships">
-                <div class="category-header">
-                    <div class="category-header-icon">🎓</div>
-                    <h2 class="category-header-title">Internships (Praktikum)</h2>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin-bottom: 20px;">Orientation</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Handshake</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Student-focused internship discovery platform.</p>
-                        <a href="https://joinhandshake.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">LinkedIn Jobs</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Search paid and remote internships with AI-assisted filters.</p>
-                        <a href="https://www.linkedin.com/jobs" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Nextjobs</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Graduate and student internship roles in Germany.</p>
-                        <a href="https://www.nextjobs.de" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">meinpraktikum.de</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">German internship portal with company reviews and ratings.</p>
-                        <a href="https://www.meinpraktikum.de" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">praktikum.info</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Comprehensive German internship database.</p>
-                        <a href="https://www.praktikum.info" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Coursera</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Build skills and certifications to strengthen internship applications.</p>
-                        <a href="https://www.coursera.org" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Application</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">VMock</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Get AI-powered academic resume feedback and scoring.</p>
-                        <a href="https://www.vmock.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Canva</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Create student-friendly CVs with professional templates.</p>
-                        <a href="https://www.canva.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Simplify</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Autofill internship applications and track submissions.</p>
-                        <a href="https://simplify.jobs" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Jobsgpt</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">AI-powered internship matching based on your profile.</p>
-                        <a href="https://jobsgpt.ai" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Interview</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Google Interview Warmup</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Practice entry-level interview questions.</p>
-                        <a href="https://grow.google/certificates/interview-warmup" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Yoodli</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">AI communication coach to improve your speaking skills.</p>
-                        <a href="https://www.yoodli.ai" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Elevator Pitch Generator</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Perfect your "Tell me about yourself" answer.</p>
-                        <a href="https://elevatorpitchgenerator.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Onboarding</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">ChatGPT</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Internship reports, professional emails, workplace learning.</p>
-                        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">DeepL</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Multilingual workplace communication support.</p>
-                        <a href="https://www.deepl.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Google Workspace</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Company research and productivity tools.</p>
-                        <a href="https://workspace.google.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Application</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item">
+                  <a class="tool-link" href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a>
+                  <p class="tool-desc">CV templates and clean layout exports.</p>
+                </li>
+                <li class="tool-item">
+                  <a class="tool-link" href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a>
+                  <p class="tool-desc">Language quality checks for CV and cover letter.</p>
+                </li>
+              </ul>
             </div>
-
-            <!-- Master Thesis -->
-            <div class="tools-category" id="thesis">
-                <div class="category-header">
-                    <div class="category-header-icon">📚</div>
-                    <h2 class="category-header-title">Master Thesis - Company Collaboration</h2>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin-bottom: 20px;">Orientation</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Excelerate</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Find companies offering Master thesis collaboration projects.</p>
-                        <a href="https://excelerate.dk/en" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Studyond</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Platform connecting students with thesis-offering companies.</p>
-                        <a href="https://studyond.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Thesisforyou</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Thesis-company matching service with topic database.</p>
-                        <a href="https://thesisforyou.com/en/english" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">LinkedIn Career Explorer</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Research industries and roles for thesis topics.</p>
-                        <a href="https://www.linkedin.com/career-explorer" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Handshake</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Find thesis projects combined with industry placements.</p>
-                        <a href="https://joinhandshake.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Application</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Cheetah AI</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Generate thesis proposals and motivation letters.</p>
-                        <a href="https://getcheetah.ai" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Interview & Meetings</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Final Round AI</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Practice structured explanations for supervisor meetings.</p>
-                        <a href="https://www.finalroundai.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Elevator Pitch Generator</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Clearly articulate your thesis topic in 30 seconds.</p>
-                        <a href="https://elevatorpitchgenerator.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Interview Lift</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Practice thesis presentations and discussion skills.</p>
-                        <a href="https://interviewlift.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Research & Writing</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">ChatGPT</h4>
-                        <span class="tool-badge">Research</span>
-                        <p class="tool-description">Literature review, methodology design, writing assistance.</p>
-                        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">DeepL</h4>
-                        <span class="tool-badge">Research</span>
-                        <p class="tool-description">Academic and professional language refinement.</p>
-                        <a href="https://www.deepl.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Coach.me</h4>
-                        <span class="tool-badge">Research</span>
-                        <p class="tool-description">Research productivity and goal-setting support.</p>
-                        <a href="https://www.coach.me" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Career Mastery</h4>
-                        <span class="tool-badge">Career Transition</span>
-                        <p class="tool-description">Plan your transition from thesis to full-time employment.</p>
-                        <a href="https://careermastery.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Full-Time Jobs -->
-            <div class="tools-category" id="fulltime">
-                <div class="category-header">
-                    <div class="category-header-icon">🚀</div>
-                    <h2 class="category-header-title">Full-Time Employment</h2>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin-bottom: 20px;">Orientation</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">EURES</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">European Employment Services for cross-border job search.</p>
-                        <a href="https://eures.europa.eu" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">XING</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Germany's professional network for DACH region careers.</p>
-                        <a href="https://www.xing.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">LinkedIn Career Explorer</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Explore career transitions and full-time opportunities.</p>
-                        <a href="https://www.linkedin.com/career-explorer" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Jobright.ai</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">AI-powered job recommendations based on your profile.</p>
-                        <a href="https://jobright.ai" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">After Graduation</h4>
-                        <span class="tool-badge">Orientation</span>
-                        <p class="tool-description">Post-study career direction and planning guidance.</p>
-                        <a href="https://www.aftergraduation.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Application</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">VMock</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Resume scoring and optimization for professional roles.</p>
-                        <a href="https://www.vmock.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Resume.io</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Professional CV builder with ATS optimization.</p>
-                        <a href="https://resume.io" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Europass</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">EU-standard CV format recognized across Europe.</p>
-                        <a href="https://europass.europa.eu" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Cheetah AI</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">AI-generated professional cover letters and resumes.</p>
-                        <a href="https://getcheetah.ai" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Notion</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Track job applications, deadlines, and follow-ups.</p>
-                        <a href="https://www.notion.so" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Airtable</h4>
-                        <span class="tool-badge">Application</span>
-                        <p class="tool-description">Organize and manage your job application pipeline.</p>
-                        <a href="https://www.airtable.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Interview</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">Final Round AI</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Master the STAR method for behavioral interviews.</p>
-                        <a href="https://www.finalroundai.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Yoodli</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Build communication confidence for professional interviews.</p>
-                        <a href="https://www.yoodli.ai" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Interview Lift</h4>
-                        <span class="tool-badge">Interview</span>
-                        <p class="tool-description">Practice both behavioral and technical interviews.</p>
-                        <a href="https://interviewlift.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-
-                <h3 style="color: #339933; font-size: 1.3rem; margin: 40px 0 20px;">Onboarding & Career Growth</h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4 class="tool-name">ChatGPT</h4>
-                        <span class="tool-badge">Onboarding</span>
-                        <p class="tool-description">Workplace communication, learning, professional development.</p>
-                        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Career Mastery</h4>
-                        <span class="tool-badge">Career Growth</span>
-                        <p class="tool-description">Long-term growth mindset and career advancement strategies.</p>
-                        <a href="https://careermastery.com" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-
-                    <div class="tool-card">
-                        <h4 class="tool-name">Coach.me</h4>
-                        <span class="tool-badge">Career Growth</span>
-                        <p class="tool-description">Performance tracking and career guidance.</p>
-                        <a href="https://www.coach.me" target="_blank" rel="noopener" class="tool-link">Visit Tool →</a>
-                    </div>
-                </div>
-            </div>
+          </details>
         </div>
-    </main>
+      </details>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Hochschule Wismar</h4>
-                    <p>University of Applied Sciences<br>Technology, Business and Design</p>
-                    <p>Philipp-Müller-Straße 14<br>23966 Wismar, Germany</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Phone: +49 3841 753-0</p>
-                    <p>Email: <a href="mailto:postmaster@hs-wismar.de">postmaster@hs-wismar.de</a></p>
-                    <p><a href="https://www.hs-wismar.de" target="_blank" rel="noopener">www.hs-wismar.de</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>About This Portal</h4>
-                    <p>This is a student project created to support international students in their job search using AI-powered tools and resources.</p>
-                    <p><strong>Disclaimer:</strong> Content is informational and AI-supported. Always verify information for your specific situation.</p>
-                </div>
+      <!-- Internship -->
+      <details class="acc acc--lvl1" data-group="categories">
+        <summary class="acc__summary">
+          <span class="acc__title">Internship</span>
+          <span class="acc__chev" aria-hidden="true">▾</span>
+        </summary>
+
+        <div class="acc__content">
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Orientation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://erasmusintern.org/" target="_blank" rel="noopener">ErasmusIntern</a></li>
+              </ul>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hochschule Wismar. Student Project - International Management Program.</p>
+          </details>
+
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Interview Preparation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></li>
+              </ul>
             </div>
+          </details>
+
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Application</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a></li>
+              </ul>
+            </div>
+          </details>
         </div>
-    </footer>
+      </details>
 
-    <script src="js/main.js"></script>
+      <!-- Master Thesis -->
+      <details class="acc acc--lvl1" data-group="categories">
+        <summary class="acc__summary">
+          <span class="acc__title">Master Thesis</span>
+          <span class="acc__chev" aria-hidden="true">▾</span>
+        </summary>
+
+        <div class="acc__content">
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Orientation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Interview Preparation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Application</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley</a></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- Full-time -->
+      <details class="acc acc--lvl1" data-group="categories">
+        <summary class="acc__summary">
+          <span class="acc__title">Full-Time</span>
+          <span class="acc__chev" aria-hidden="true">▾</span>
+        </summary>
+
+        <div class="acc__content">
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Orientation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.stepstone.de/" target="_blank" rel="noopener">StepStone</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Interview Preparation</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="acc acc--lvl2" data-group="phases">
+            <summary class="acc__summary">
+              <span class="acc__title">Application</span>
+              <span class="acc__chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="acc__content">
+              <ul class="tool-list">
+                <li class="tool-item"><a class="tool-link" href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a></li>
+                <li class="tool-item"><a class="tool-link" href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Hochschule Wismar. Student Project - International Management Program.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

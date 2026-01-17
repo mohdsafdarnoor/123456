@@ -9,11 +9,11 @@
 </head>
 
 <body>
-  <header class="header site-header">
+  <header class="site-header">
     <div class="container header-row">
       <a class="logo" href="index.html">Hochschule Wismar</a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link active" href="tools.html">AI Tools</a>
         <a class="nav-link" href="prompts.html">AI Prompts</a>
@@ -25,238 +25,243 @@
   </header>
 
   <main class="container">
-    <section class="page-hero">
-      <h1>AI Tools</h1>
-      <p>Select a category, then choose a phase to see the tools.</p>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">AI Tools</h1>
+        <p class="hero-subtitle">Select a category and phase to view recommended tools.</p>
+      </div>
     </section>
 
-    <section class="tools-accordion" aria-label="AI tools by category and phase">
-      <!-- Work Student -->
-      <details class="acc acc--lvl1" data-group="categories">
-        <summary class="acc__summary">
-          <span class="acc__title">Work Student</span>
-          <span class="acc__chev" aria-hidden="true">▾</span>
-        </summary>
+    <section class="panel" aria-label="Filters">
+      <div class="panel-head">
+        <h2 class="panel-title">Find tools</h2>
+        <p class="panel-desc">Choose a category first, then a phase. Tools appear below.</p>
+      </div>
 
-        <div class="acc__content">
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Orientation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item">
-                  <a class="tool-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-                  <p class="tool-desc">Find working student roles, company pages, and recruiters.</p>
-                </li>
-                <li class="tool-item">
-                  <a class="tool-link" href="https://www.stepstone.de/" target="_blank" rel="noopener">StepStone</a>
-                  <p class="tool-desc">Search roles and filter by location and contract type.</p>
-                </li>
-                <li class="tool-item">
-                  <a class="tool-link" href="https://www.indeed.com/" target="_blank" rel="noopener">Indeed</a>
-                  <p class="tool-desc">Job discovery and alerts.</p>
-                </li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Interview Preparation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item">
-                  <a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a>
-                  <p class="tool-desc">Mock interviews, STAR answers, role-specific questions.</p>
-                </li>
-                <li class="tool-item">
-                  <a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a>
-                  <p class="tool-desc">Research company, role requirements, and industry context.</p>
-                </li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Application</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item">
-                  <a class="tool-link" href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a>
-                  <p class="tool-desc">CV templates and clean layout exports.</p>
-                </li>
-                <li class="tool-item">
-                  <a class="tool-link" href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a>
-                  <p class="tool-desc">Language quality checks for CV and cover letter.</p>
-                </li>
-              </ul>
-            </div>
-          </details>
+      <div class="filters">
+        <div class="field">
+          <label class="label" for="categorySelect">Category</label>
+          <select id="categorySelect" class="select">
+            <option value="" selected disabled>Select category</option>
+          </select>
         </div>
-      </details>
 
-      <!-- Internship -->
-      <details class="acc acc--lvl1" data-group="categories">
-        <summary class="acc__summary">
-          <span class="acc__title">Internship</span>
-          <span class="acc__chev" aria-hidden="true">▾</span>
-        </summary>
-
-        <div class="acc__content">
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Orientation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://erasmusintern.org/" target="_blank" rel="noopener">ErasmusIntern</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Interview Preparation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Application</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a></li>
-              </ul>
-            </div>
-          </details>
+        <div class="field">
+          <label class="label" for="phaseSelect">Phase</label>
+          <select id="phaseSelect" class="select" disabled>
+            <option value="" selected disabled>Select phase</option>
+          </select>
         </div>
-      </details>
 
-      <!-- Master Thesis -->
-      <details class="acc acc--lvl1" data-group="categories">
-        <summary class="acc__summary">
-          <span class="acc__title">Master Thesis</span>
-          <span class="acc__chev" aria-hidden="true">▾</span>
-        </summary>
-
-        <div class="acc__content">
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Orientation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Interview Preparation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Application</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley</a></li>
-              </ul>
-            </div>
-          </details>
+        <div class="field field--search">
+          <label class="label" for="searchInput">Search (optional)</label>
+          <input id="searchInput" class="input" type="text" placeholder="e.g., CV, interview, research…" />
         </div>
-      </details>
 
-      <!-- Full-time -->
-      <details class="acc acc--lvl1" data-group="categories">
-        <summary class="acc__summary">
-          <span class="acc__title">Full-Time</span>
-          <span class="acc__chev" aria-hidden="true">▾</span>
-        </summary>
-
-        <div class="acc__content">
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Orientation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.stepstone.de/" target="_blank" rel="noopener">StepStone</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Interview Preparation</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="acc acc--lvl2" data-group="phases">
-            <summary class="acc__summary">
-              <span class="acc__title">Application</span>
-              <span class="acc__chev" aria-hidden="true">▾</span>
-            </summary>
-            <div class="acc__content">
-              <ul class="tool-list">
-                <li class="tool-item"><a class="tool-link" href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a></li>
-                <li class="tool-item"><a class="tool-link" href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a></li>
-              </ul>
-            </div>
-          </details>
+        <div class="field field--actions">
+          <button id="clearBtn" class="btn btn-ghost" type="button">Clear</button>
         </div>
-      </details>
+      </div>
+    </section>
+
+    <section class="results" aria-label="Tool results">
+      <div class="results-head">
+        <h2 class="results-title">Tools</h2>
+        <p id="resultsMeta" class="results-meta">Choose a category and phase to see tools.</p>
+      </div>
+
+      <div id="toolsGrid" class="tools-grid" aria-live="polite"></div>
+
+      <p id="emptyState" class="empty" hidden>
+        No tools found for this selection. Try another category/phase or clear search.
+      </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Hochschule Wismar. Student Project - International Management Program.</p>
+    <div class="container footer-row">
+      <p>© 2026 Hochschule Wismar. Student Project - International Management Program.</p>
     </div>
   </footer>
 
-  <!-- This loads your external JS file via src=... [web:53] -->
-  <script src="js/main.js"></script>
+  <script>
+    // -----------------------------
+    // DATA: Edit this section only
+    // -----------------------------
+    const TOOLS_DATA = {
+      "Work Student": {
+        "Orientation": [
+          { name: "LinkedIn", url: "https://www.linkedin.com/", desc: "Find working student roles, company pages, and recruiters." },
+          { name: "StepStone", url: "https://www.stepstone.de/", desc: "Search roles and filter by location and contract type." },
+          { name: "Indeed", url: "https://www.indeed.com/", desc: "Job discovery and alerts." }
+        ],
+        "Interview Preparation": [
+          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Mock interviews, STAR answers, role-specific questions." },
+          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Research company, role requirements, and industry context." }
+        ],
+        "Application": [
+          { name: "Canva", url: "https://www.canva.com/", desc: "CV templates and clean layout exports." },
+          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Language quality checks for CV and cover letter." }
+        ]
+      },
+
+      "Internship": {
+        "Orientation": [
+          { name: "LinkedIn", url: "https://www.linkedin.com/", desc: "Search internships and connect with recruiters." },
+          { name: "ErasmusIntern", url: "https://erasmusintern.org/", desc: "Internship listings across Europe." }
+        ],
+        "Interview Preparation": [
+          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Practice interview questions and improve answers." },
+          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Research industries, companies and role expectations." }
+        ],
+        "Application": [
+          { name: "Canva", url: "https://www.canva.com/", desc: "Create a clean, modern CV." },
+          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Polish cover letters and emails." }
+        ]
+      },
+
+      "Master Thesis": {
+        "Topic & Literature": [
+          { name: "Google Scholar", url: "https://scholar.google.com/", desc: "Find peer-reviewed papers and citations." },
+          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Fast background research with sources." }
+        ],
+        "Writing & Structure": [
+          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Outline chapters, improve clarity, and draft sections." },
+          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Grammar, tone, and readability improvements." }
+        ]
+      },
+
+      "Full-Time": {
+        "Orientation": [
+          { name: "LinkedIn", url: "https://www.linkedin.com/", desc: "Full-time roles, networking, and recruiter outreach." },
+          { name: "StepStone", url: "https://www.stepstone.de/", desc: "Job search and filters for Germany/EU." }
+        ],
+        "Interview Preparation": [
+          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Behavioral + technical interview prep." },
+          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Company and market research." }
+        ],
+        "Application": [
+          { name: "Canva", url: "https://www.canva.com/", desc: "Professional resume layout." },
+          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Error-free applications and emails." }
+        ]
+      }
+    };
+
+    // -----------------------------
+    // UI Logic
+    // -----------------------------
+    const categorySelect = document.getElementById("categorySelect");
+    const phaseSelect = document.getElementById("phaseSelect");
+    const searchInput = document.getElementById("searchInput");
+    const clearBtn = document.getElementById("clearBtn");
+    const toolsGrid = document.getElementById("toolsGrid");
+    const emptyState = document.getElementById("emptyState");
+    const resultsMeta = document.getElementById("resultsMeta");
+
+    function initCategories(){
+      Object.keys(TOOLS_DATA).forEach(cat => {
+        const opt = document.createElement("option");
+        opt.value = cat;
+        opt.textContent = cat;
+        categorySelect.appendChild(opt);
+      });
+    }
+
+    function setPhasesForCategory(category){
+      phaseSelect.innerHTML = '<option value="" selected disabled>Select phase</option>';
+
+      if(!category || !TOOLS_DATA[category]){
+        phaseSelect.disabled = true;
+        return;
+      }
+
+      const phases = Object.keys(TOOLS_DATA[category]);
+      phases.forEach(phase => {
+        const opt = document.createElement("option");
+        opt.value = phase;
+        opt.textContent = phase;
+        phaseSelect.appendChild(opt);
+      });
+
+      phaseSelect.disabled = false;
+    }
+
+    function normalize(s){
+      return (s || "").toLowerCase().trim();
+    }
+
+    function renderTools(){
+      const category = categorySelect.value;
+      const phase = phaseSelect.value;
+      const q = normalize(searchInput.value);
+
+      toolsGrid.innerHTML = "";
+      emptyState.hidden = true;
+
+      if(!category || !phase){
+        resultsMeta.textContent = "Choose a category and phase to see tools.";
+        return;
+      }
+
+      let tools = (TOOLS_DATA[category]?.[phase] || []);
+
+      if(q){
+        tools = tools.filter(t =>
+          normalize(t.name).includes(q) || normalize(t.desc).includes(q)
+        );
+      }
+
+      resultsMeta.textContent = q
+        ? `${category} → ${phase} • Showing ${tools.length} result(s) for "${searchInput.value.trim()}".`
+        : `${category} → ${phase} • Showing ${tools.length} tool(s).`;
+
+      if(tools.length === 0){
+        emptyState.hidden = false;
+        return;
+      }
+
+      tools.forEach(tool => {
+        const card = document.createElement("article");
+        card.className = "tool-card";
+
+        card.innerHTML = `
+          <div class="tool-top">
+            <h3 class="tool-name">${tool.name}</h3>
+            <span class="badge">AI Tool</span>
+          </div>
+          <p class="tool-desc">${tool.desc || ""}</p>
+          <a class="tool-btn" href="${tool.url}" target="_blank" rel="noopener">
+            Open tool
+            <span aria-hidden="true">→</span>
+          </a>
+        `;
+
+        toolsGrid.appendChild(card);
+      });
+    }
+
+    function clearAll(){
+      categorySelect.value = "";
+      phaseSelect.value = "";
+      phaseSelect.disabled = true;
+      phaseSelect.innerHTML = '<option value="" selected disabled>Select phase</option>';
+      searchInput.value = "";
+      toolsGrid.innerHTML = "";
+      emptyState.hidden = true;
+      resultsMeta.textContent = "Choose a category and phase to see tools.";
+    }
+
+    categorySelect.addEventListener("change", () => {
+      setPhasesForCategory(categorySelect.value);
+      phaseSelect.value = "";
+      renderTools();
+    });
+
+    phaseSelect.addEventListener("change", renderTools);
+    searchInput.addEventListener("input", renderTools);
+    clearBtn.addEventListener("click", clearAll);
+
+    initCategories();
+  </script>
 </body>
 </html>

@@ -5,17 +5,75 @@
    ============================================ */
 
 /* === CSS Variables === */
-:root {
-    --green: #339933;
-    --anthrazit: #2f3229;
-    --lightgrey: #afafaf;
-    --white: #ffffff;
-    --background: #f5f5f5;
-    --border: #dddddd;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+:root{
+  --green:#339933;
+  --dark:#2f3229;
+  --border: rgba(47, 50, 41, 0.15);
+  --muted: rgba(47, 50, 41, 0.75);
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: Arial, sans-serif; color:var(--dark); background:#fff; }
+.container{ width:min(1100px, 92%); margin:0 auto; }
+
+.site-header{
+  border-bottom:1px solid var(--border);
+  background:#fff;
+  position:sticky; top:0; z-index:10;
+}
+.header-row{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px; }
+.logo{ color:var(--dark); text-decoration:none; font-weight:700; }
+.nav{ display:flex; flex-wrap:wrap; gap:12px; }
+.nav a{ text-decoration:none; color:var(--dark); padding:6px 10px; border-radius:8px; }
+.nav a:hover{ background: rgba(51,153,51,0.08); }
+.nav a.active{ background: rgba(51,153,51,0.14); }
+
+.page-hero{ padding:20px 0 6px; }
+.page-hero p{ color:var(--muted); margin-top:6px; }
+
+.tools-accordion{ padding: 10px 0 30px; }
+
+/* Accordion */
+.acc{
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin:12px 0;
+  background:#fff;
+  overflow:hidden;
+}
+.acc__summary{
+  list-style:none;
+  cursor:pointer;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-weight:700;
+  color:var(--dark);
+}
+.acc__summary::-webkit-details-marker{ display:none; }
+.acc__summary:hover{ background: rgba(51,153,51,0.08); }
+.acc__chev{ transition: transform 0.2s ease; }
+.acc[open] > .acc__summary .acc__chev{ transform: rotate(180deg); }
+.acc__content{ padding: 12px 16px 16px; }
+
+.acc--lvl2{
+  margin:10px 0;
+  border-radius:10px;
+  border-color: rgba(47, 50, 41, 0.12);
+}
+.acc--lvl2 .acc__summary{ font-weight:600; padding:12px 14px; }
+
+.tool-list{ margin: 6px 0 0; padding-left: 18px; }
+.tool-item{ margin: 10px 0; }
+.tool-link{ color: var(--green); font-weight:700; }
+.tool-desc{ margin: 4px 0 0; color: var(--muted); }
+
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:18px 0;
+  color: var(--muted);
 }
 
 /* === Reset & Base === */

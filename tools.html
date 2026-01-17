@@ -9,17 +9,17 @@
 </head>
 
 <body>
-  <!-- Simple header (keep or replace with your existing site header) -->
-  <header class="site-header">
+  <header class="header site-header">
     <div class="container header-row">
       <a class="logo" href="index.html">Hochschule Wismar</a>
+
       <nav class="nav">
-        <a href="index.html">Home</a>
-        <a class="active" href="tools.html">AI Tools</a>
-        <a href="prompts.html">AI Prompts</a>
-        <a href="guidelines.html">Guidelines</a>
-        <a href="faq.html">FAQs</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="tools.html">AI Tools</a>
+        <a class="nav-link" href="prompts.html">AI Prompts</a>
+        <a class="nav-link" href="guidelines.html">Guidelines</a>
+        <a class="nav-link" href="faq.html">FAQs</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -30,7 +30,6 @@
       <p>Select a category, then choose a phase to see the tools.</p>
     </section>
 
-    <!-- LEVEL 1: Category -->
     <section class="tools-accordion" aria-label="AI tools by category and phase">
       <!-- Work Student -->
       <details class="acc acc--lvl1" data-group="categories">
@@ -40,7 +39,6 @@
         </summary>
 
         <div class="acc__content">
-          <!-- LEVEL 2: Phases -->
           <details class="acc acc--lvl2" data-group="phases">
             <summary class="acc__summary">
               <span class="acc__title">Orientation</span>
@@ -258,6 +256,7 @@
     </div>
   </footer>
 
+  <!-- This loads your external JS file via src=... [web:53] -->
   <script src="js/main.js"></script>
 </body>
 </html>

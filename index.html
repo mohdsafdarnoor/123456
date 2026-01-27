@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+
+  <!-- 1. HEADER (HS Wismar Green #339933) -->
   <header class="topbar">
     <div class="topbar-inner">
       <div>
         <span class="brand-title">Hochschule Wismar</span>
-        <span class="brand-subtitle">AI Job Search Support</span>
+        <span class="brand-subtitle">Business Faculty</span>
       </div>
       <nav class="nav">
-        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link active" href="./index.html">Home</a>
         <a class="nav-link" href="./tools.html">AI Tools</a>
         <a class="nav-link" href="./prompts.html">AI Prompts</a>
         <a class="nav-link" href="./guidelines.html">Guidelines</a>
@@ -25,32 +27,119 @@
   </header>
 
   <main class="page">
+    
+    <!-- 2. HERO SECTION -->
     <section class="hero">
       <h1>AI Job Search Support</h1>
-      <p>Your complete platform for job search tools, prompts, and guides tailored to international students in Germany.</p>
+      <p style="max-width: 800px; margin: 0 auto;">
+        A specialized platform for <strong>Master International Management</strong> students to accelerate their career entry in Germany using AI tools, structured prompts, and expert guides.
+      </p>
+      <div style="margin-top: 30px;">
+        <a class="btn" href="./tools.html">Explore AI Tools</a>
+        <a class="btn" href="./guidelines.html" style="background-color: transparent; border: 2px solid var(--hsw-green); color: var(--hsw-green); margin-left: 10px;">Download Guides</a>
+      </div>
     </section>
 
-    <div class="card">
-      <h2>🚀 Get Started</h2>
-      <p>Explore AI-powered tools organized by job category and application stage.</p>
-      <a class="btn" href="./tools.html">Browse AI Tools →</a>
+    <!-- 3. HOW IT WORKS (Three Pillars) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 50px;">
+      
+      <!-- Feature 1 -->
+      <div class="card" style="text-align: center; border-top: 5px solid var(--hsw-green); border-left: 1px solid #eee;">
+        <h2 style="color: var(--hsw-green);">🤖 AI Tools Directory</h2>
+        <p>Curated list of AI tools for CV optimization, interview prep, and job matching tailored for the German market.</p>
+        <a href="./tools.html" class="tool-link">View Directory →</a>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="card" style="text-align: center; border-top: 5px solid var(--hsw-green); border-left: 1px solid #eee;">
+        <h2 style="color: var(--hsw-green);">📝 Copy-Paste Prompts</h2>
+        <p>Tested ChatGPT & Claude prompts to write German cover letters, ATS-friendly CVs, and cold emails.</p>
+        <a href="./prompts.html" class="tool-link">Get Prompts →</a>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="card" style="text-align: center; border-top: 5px solid var(--hsw-green); border-left: 1px solid #eee;">
+        <h2 style="color: var(--hsw-green);">📚 Career Guides</h2>
+        <p>Step-by-step PDF guides for Working Student jobs, Internships, Master Thesis, and Full-time roles.</p>
+        <a href="./guidelines.html" class="tool-link">Download Guides →</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>📝 Ready-to-Use Prompts</h2>
-      <p>Copy-paste ChatGPT prompts for resumes, cover letters, and interview prep.</p>
-      <a class="btn" href="./prompts.html">View Prompts →</a>
-    </div>
+    <!-- 4. CHOOSE YOUR PATH (Job Categories) -->
+    <section>
+      <h2 style="text-align: center; margin-bottom: 30px; color: var(--hsw-anthrazit);">Select Your Career Stage</h2>
+      
+      <!-- Working Student -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <div>
+            <h3>Working Student (Werkstudent)</h3>
+            <p>Find part-time work compatible with your studies (up to 20h/week).</p>
+            <ul>
+              <li>Find flexible English-speaking roles</li>
+              <li>Understand tax & insurance rules</li>
+              <li>Write a student-friendly CV</li>
+            </ul>
+          </div>
+          <a class="btn" href="./tools.html#working-student">Start Here</a>
+        </div>
+      </div>
 
-    <div class="card">
-      <h2>📚 Download Guides</h2>
-      <p>Comprehensive PDF guides for working students, internships, thesis, and full-time roles.</p>
-      <a class="btn" href="./guidelines.html">Get Guides →</a>
-    </div>
+      <!-- Internship -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <div>
+            <h3>Internship (Praktikum)</h3>
+            <p>Secure mandatory or voluntary internships to gain German work experience.</p>
+            <ul>
+              <li>Mandatory vs. Voluntary logic</li>
+              <li>Find internship-specific portals</li>
+              <li>Prepare for "Kennlerngespräch"</li>
+            </ul>
+          </div>
+          <a class="btn" href="./tools.html#internship">Start Here</a>
+        </div>
+      </div>
+
+      <!-- Master Thesis -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <div>
+            <h3>Master Thesis (Company)</h3>
+            <p>Partner with a German company for your final thesis project.</p>
+            <ul>
+              <li>Finding industrial partners</li>
+              <li>Writing a research proposal</li>
+              <li>Balancing academic & business goals</li>
+            </ul>
+          </div>
+          <a class="btn" href="./tools.html#thesis">Start Here</a>
+        </div>
+      </div>
+
+      <!-- Full-Time -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <div>
+            <h3>Full-Time Employment</h3>
+            <p>Launch your professional career in Germany after graduation.</p>
+            <ul>
+              <li>Job Search Visa / Blue Card basics</li>
+              <li>Negotiating German salaries</li>
+              <li>Onboarding culture tips</li>
+            </ul>
+          </div>
+          <a class="btn" href="./tools.html#fulltime">Start Here</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- 5. FOOTER -->
   <footer class="footer">
-    <p>© 2026 Hochschule Wismar. All rights reserved.</p>
+    <p>© 2026 Hochschule Wismar. University of Applied Sciences: Technology, Business and Design.</p>
+    <p style="font-size: 13px; margin-top: 10px;">Developed by Master International Management Students.</p>
   </footer>
 
   <script src="./script.js"></script>

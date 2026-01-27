@@ -1,271 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompts Library | Hochschule Wismar</title>
-    <meta name="description" content="Ready-to-use ChatGPT prompts for CVs, cover letters, and interview preparation">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Prompts | AI Job Search Support | Hochschule Wismar</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Clickable Logo -->
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="nav-desktop">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="tools.html" class="nav-link">AI Tools</a>
-                    <a href="prompts.html" class="nav-link active">AI Prompts</a>
-                    <a href="guidelines.html" class="nav-link">Guidelines</a>
-                    <a href="faqs.html" class="nav-link">FAQs</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-nav">
-            <a href="index.html" class="mobile-nav-link">Home</a>
-            <a href="tools.html" class="mobile-nav-link">AI Tools</a>
-            <a href="prompts.html" class="mobile-nav-link active">AI Prompts</a>
-            <a href="guidelines.html" class="mobile-nav-link">Guidelines</a>
-            <a href="faqs.html" class="mobile-nav-link">FAQs</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
-        </nav>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="brand-title">Hochschule Wismar</span>
+        <span class="brand-subtitle">AI Job Search Support</span>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./tools.html">AI Tools</a>
+        <a class="nav-link active" href="./prompts.html">AI Prompts</a>
+        <a class="nav-link" href="./guidelines.html">Guidelines</a>
+        <a class="nav-link" href="./faqs.html">FAQs</a>
+        <a class="nav-link" href="./contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">AI Prompts Library</h1>
-            <p class="page-description">Ready-to-use ChatGPT prompts for every stage of your job search. Click on each category to expand and view prompts.</p>
-        </div>
+  <main class="page">
+    <section class="hero">
+      <h1>AI Prompts Library</h1>
+      <p>Copy-paste these prompts into ChatGPT or Claude to accelerate your job search.</p>
     </section>
 
-    <!-- Main Content -->
-    <main class="prompts-section">
-        <div class="container">
-            <!-- Instructions -->
-            <div style="background: #fff3cd; padding: 25px; border-radius: 8px; border-left: 5px solid #ff9800; margin-bottom: 40px;">
-                <h3 style="color: #2f3229; margin-bottom: 10px;">How to Use These Prompts</h3>
-                <ol style="margin-left: 25px; line-height: 1.8;">
-                    <li>Click on a category to expand and view prompts</li>
-                    <li>Select the prompt that matches your situation</li>
-                    <li>Copy the prompt template</li>
-                    <li>Replace placeholders with your actual information</li>
-                    <li>Paste into ChatGPT and get personalized results</li>
-                    <li><strong>Always review and personalize the output before using it</strong></li>
-                </ol>
-            </div>
-
-            <!-- Part-Time Jobs (Werkstudent) Prompts -->
-            <div class="accordion">
-                <div class="accordion-header">
-                    <h2 class="accordion-title">💼 Part-Time Jobs (Werkstudent) Prompts</h2>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <h3>Prompt 1: Werkstudent Role - No Experience</h3>
-                        <p><strong>Copy this prompt into ChatGPT:</strong></p>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I am an international student looking for a Werkstudent (part-time) role in Germany. Here is my information:<br><br><strong>Background Information:</strong><br>- Degree and field of study: [Your degree, e.g., Master's in International Management]<br>- University and current semester: [Your university and semester]<br>- Relevant coursework or academic projects: [List 2-3 relevant courses or projects]<br>- Tools, software, or methods I'm familiar with: [e.g., Excel, Python, PowerPoint]<br>- German language level: [A1, A2, B1, B2, C1, or C2]<br>- English language level: [Your level]<br>- Weekly availability: [How many hours per week can you work?]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Suggest realistic Werkstudent roles suitable for candidates with no prior work experience<br>2. Explain which roles are typically open to international students<br>3. Rewrite my CV to highlight academic strengths and transferable skills<br>4. Prepare strong answers to the question "Do you have practical experience?"<br>5. Advise how to position myself as reliable and trainable
-                        </div>
-
-                        <h3>Prompt 2: Werkstudent Role - Early Experience (0-2 Years)</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I have some early work experience and am looking for a Werkstudent position in Germany.<br><br><strong>Background Information:</strong><br>- Degree and field of study: [Your degree]<br>- Previous internships, working student jobs, or part-time roles: [List your experience]<br>- Key responsibilities handled: [What did you do?]<br>- Tools, systems, or processes used: [Software, methods, etc.]<br>- Target Werkstudent role or industry: [Where do you want to work?]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Align my experience with German market expectations for Werkstudent roles<br>2. Rewrite CV bullet points using impact- and contribution-oriented language<br>3. Identify gaps and suggest how to close them quickly<br>4. Draft a short, professional email to HR expressing interest in a Werkstudent position
-                        </div>
-
-                        <h3>Prompt 3: Career Shift - Changing Industries</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I am changing career paths and looking for a Werkstudent role in a new industry.<br><br><strong>Background Information:</strong><br>- Previous role or industry: [Your past work]<br>- Target role or field in Germany: [Where you want to go]<br>- Transferable skills from previous experience: [Skills you can bring]<br>- Reason for career change: [Brief explanation]<br>- Current education or upskilling efforts: [What you're learning]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Identify transferable skills relevant to the new role<br>2. Rewrite my CV to reduce perceived hiring risk for German employers<br>3. Help me position the career shift as logical and intentional<br>4. Prepare convincing interview answers explaining the transition<br>5. Highlight what German recruiters will worry about and how to address it
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Internships Prompts -->
-            <div class="accordion">
-                <div class="accordion-header">
-                    <h2 class="accordion-title">🎓 Internship (Praktikum) Prompts</h2>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <h3>Prompt 1: Mandatory Internship (Pflichtpraktikum) - No Experience</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I need a mandatory internship (Pflichtpraktikum) for my degree and have no work experience.<br><br><strong>Background Information:</strong><br>- Degree and specialization: [Your degree]<br>- University and current semester: [Your university and semester]<br>- Relevant coursework and academic projects: [List 2-3 items]<br>- Tools, software, or methods you know: [Excel, Python, etc.]<br>- German language level: [A1-C2]<br>- Confirmation that the internship is mandatory: [Yes, required by my program]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Suggest 5-7 suitable Pflichtpraktikum roles aligned with my profile<br>2. Translate coursework and projects into CV-ready experience<br>3. Create a one-page, ATS-friendly German-style CV<br>4. List common German interview questions for Pflichtpraktikum candidates<br>5. Highlight frequent mistakes international students make and how to avoid them
-                        </div>
-
-                        <h3>Prompt 2: Voluntary Internship (Freiwilliges Praktikum) - No Experience</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I want to do a voluntary internship to gain experience.<br><br><strong>Background Information:</strong><br>- Degree or field of study: [Your degree]<br>- University and study focus: [Your focus area]<br>- Transferable skills or academic strengths: [What are you good at?]<br>- Availability and preferred duration: [How long can you intern?]<br>- Language skills: [German and English levels]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Explain what German recruiters realistically expect from voluntary interns<br>2. Rewrite my CV to emphasize learning ability, reliability, and structure<br>3. Draft a short German-style cover letter (Anschreiben)<br>4. Suggest strong answers to common "no experience" interview questions
-                        </div>
-
-                        <h3>Prompt 3: Internship With Prior Experience</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I have previous internship or work experience and am applying for another internship.<br><br><strong>Background Information:</strong><br>- Degree and specialization: [Your degree]<br>- Previous internships, jobs, or projects: [Your experience]<br>- Key tools, skills, or methods used: [What you've worked with]<br>- Type of internship I am applying for: [Target role]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Position me as a high-impact intern rather than a beginner<br>2. Rewrite CV bullet points to show contribution and results<br>3. Provide examples of weak vs strong internship CV bullets<br>4. Suggest how to negotiate responsibilities or compensation professionally
-                        </div>
-
-                        <h3>Prompt 4: CV Audit & Rejection Analysis</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I'm getting rejections and need to understand why.<br><br><strong>Background Information:</strong><br>- Current CV: [Paste your CV or describe it]<br>- Cover letter if available: [Your cover letter]<br>- Target internship roles or industries: [Where you're applying]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Identify why my application may be rejected or ignored<br>2. Point out unclear or risky elements from a German recruiter perspective<br>3. Suggest concrete and honest improvements<br>4. Advise what I can realistically improve within 4-6 weeks
-                        </div>
-
-                        <h3>Prompt 5: German Language Confidence</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I'm worried about my German language level for internships.<br><br><strong>Background Information:</strong><br>- Current German language level: [A1, A2, B1, B2, C1, C2]<br>- Target roles or industries: [Where you want to intern]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Identify internships where German is not a strict requirement<br>2. Help me frame my language skills positively on my CV<br>3. Provide strong answers to language-related interview questions<br>4. Advise when to apply anyway versus when not to
-                        </div>
-
-                        <h3>Prompt 6: ATS Optimization - Germany Focused</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I want to optimize my CV for German ATS (Applicant Tracking Systems).<br><br><strong>Background Information:</strong><br>- Current CV: [Describe or paste key sections]<br>- Target internship job descriptions: [Copy 1-2 job postings you're targeting]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Identify missing keywords relevant to my target roles<br>2. Flag unclear job titles or descriptions<br>3. Suggest ATS-friendly keyword improvements<br>4. Improve overall CV scan-ability for German systems
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Master Thesis Prompts -->
-            <div class="accordion">
-                <div class="accordion-header">
-                    <h2 class="accordion-title">📚 Master Thesis Prompts</h2>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <h3>Prompt 1: Finding Companies for a Master Thesis</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I need to find a company to collaborate with for my Master thesis.<br><br><strong>Background Information:</strong><br>- Degree and specialization: [Your degree]<br>- University and thesis requirements: [What your university requires]<br>- Preferred industry or function: [Your interest area]<br>- Location preference in Germany: [City or region]<br>- Working student or part-time job status: [Are you working?]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Identify types of companies in Germany open to Master thesis collaborations<br>2. Suggest departments where Master theses are commonly offered<br>3. Explain differences between corporate, SME, and startup thesis collaborations<br>4. List platforms, portals, and strategies to find thesis-friendly companies<br>5. Advise how early I should approach companies before thesis start
-                        </div>
-
-                        <h3>Prompt 2: Convincing a Company to Allow a Thesis With a Job</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I'm currently working and want to convince my employer to let me do my thesis with them.<br><br><strong>Background Information:</strong><br>- Current or target company: [Company name or type]<br>- Working student or part-time role details: [Your current role]<br>- Thesis duration and university requirements: [How long, what's needed]<br>- Proposed general thesis area: [Your topic idea]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Help me frame my Master thesis as a business solution, not an academic burden<br>2. Draft a convincing, professional email to HR or the hiring manager<br>3. Address concerns about time commitment and workload balance<br>4. Address confidentiality, data access, and IP concerns<br>5. Explain how supervision can be kept low-effort for the company
-                        </div>
-
-                        <h3>Prompt 3: Defining a Business-Relevant Master Thesis Topic</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I need help choosing a thesis topic that's valuable for both my degree and a company.<br><br><strong>Background Information:</strong><br>- My degree and specialization: [Your degree]<br>- Target company or industry: [Where you want to work]<br>- Known business challenges or pain points: [Any problems you're aware of]<br>- Preferred research methods if any: [Qualitative, quantitative, case study, etc.]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Propose three Master thesis topics aligned with my degree and company needs<br>2. For each topic, explain the business value<br>3. Define expected outcomes or deliverables for the company<br>4. Explain why each topic is low-risk and practical for the organization
-                        </div>
-
-                        <h3>Prompt 4: Common Problems in Thesis-Job Combinations</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I'm facing challenges balancing my thesis and work responsibilities.<br><br><strong>Background Information:</strong><br>- Current thesis or job situation: [Describe your situation]<br>- University supervisor expectations: [What they expect]<br>- Company supervisor expectations: [What your employer expects]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Advise how to handle situations where work output is expected but thesis is not recognized<br>2. Help resolve conflicts between university requirements and company expectations<br>3. Suggest strategies for dealing with low supervisor availability or support<br>4. Provide professional communication templates where needed<br>5. Highlight my rights and responsibilities as a student in Germany
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Full-Time Jobs Prompts -->
-            <div class="accordion">
-                <div class="accordion-header">
-                    <h2 class="accordion-title">🚀 Full-Time Employment Prompts</h2>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <h3>Prompt 1: Full-Time Job Applications With Experience</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I'm graduating soon and applying for full-time positions in Germany.<br><br><strong>Background Information:</strong><br>- Degree and specialization: [Your degree]<br>- Graduation month and year: [When you graduate]<br>- Relevant internships or work experience: [Your experience]<br>- Target job roles and industries: [Where you want to work]<br>- Key tools, systems, or methodologies: [What you know]<br>- Language proficiency: [German and English levels]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Rewrite my CV to position me as job-ready for full-time roles<br>2. Optimize my CV for German ATS systems and recruiter screening<br>3. Tailor CV language to German market expectations<br>4. Draft a professional German-style cover letter (Anschreiben)<br>5. Highlight strengths and address potential concerns proactively
-                        </div>
-
-                        <h3>Prompt 2: Full-Time Interview Preparation - Germany Focused</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I have an interview for a full-time position and need to prepare.<br><br><strong>Background Information:</strong><br>- Target role and company type: [Role you're interviewing for]<br>- Years of experience: [Your experience]<br>- Job description if available: [Copy the job posting]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Conduct a mock interview for a full-time role in Germany<br>2. After each of my answers, evaluate structure, clarity, and cultural fit<br>3. Explain what German interviewers value in strong answers<br>4. Suggest improved versions of weak answers<br>5. Highlight common interview mistakes graduates make
-                        </div>
-
-                        <h3>Prompt 3: Full-Time Onboarding - First 90 Days Preparation</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I just got hired full-time and want to succeed in my first 90 days.<br><br><strong>Background Information:</strong><br>- Job role and department: [Your new role]<br>- Company type: [Startup, SME, or corporate]<br>- Working language and team structure: [German/English, team size]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Create a detailed 30-60-90 day onboarding plan<br>2. Explain performance expectations for new hires in Germany<br>3. Outline communication norms and feedback culture<br>4. Highlight cultural dos and don'ts in German workplaces<br>5. Help me build credibility and trust in my first three months
-                        </div>
-
-                        <h3>Prompt 4: Salary Negotiation for Full-Time Roles</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I received a job offer and need help negotiating salary.<br><br><strong>Background Information:</strong><br>- Job offer details: [Salary offered, benefits, location]<br>- My experience level: [Years and type of experience]<br>- Industry and company size: [Your field and company type]<br>- Research I've done: [What you know about market rates]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Evaluate if the offer is competitive for my role and experience in Germany<br>2. Provide market benchmarks for similar positions<br>3. Draft a professional salary negotiation email<br>4. Suggest non-salary benefits I could negotiate<br>5. Advise on negotiation timing and approach for German employers
-                        </div>
-
-                        <h3>Prompt 5: Career Transition - From Student to Professional</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I'm graduating and transitioning from student life to professional work.<br><br><strong>Background Information:</strong><br>- Current student status and graduation date: [Your timeline]<br>- Previous internships or student jobs: [Your experience]<br>- Target industry and role: [Where you're going]<br>- Concerns or uncertainties: [What worries you]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Help me understand the mindset shift from student to professional<br>2. Explain German workplace expectations for entry-level employees<br>3. Suggest how to present student experience as professional value<br>4. Provide tips for building professional relationships quickly<br>5. Outline common mistakes new graduates make and how to avoid them
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- General CV & Cover Letter Prompts -->
-            <div class="accordion">
-                <div class="accordion-header">
-                    <h2 class="accordion-title">📝 General CV & Cover Letter Prompts</h2>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <h3>Prompt 1: Create a German-Style CV from Scratch</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I need to create a German-style CV (Lebenslauf) from scratch.<br><br><strong>Background Information:</strong><br>- Personal information: [Name, location, contact]<br>- Education: [Degrees, universities, dates]<br>- Work experience: [Jobs, internships, roles]<br>- Skills: [Languages, software, technical skills]<br>- Certifications or achievements: [Any relevant accomplishments]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Create a one-page German-style CV following German standards<br>2. Use appropriate formatting (photo placement, date format, etc.)<br>3. Translate my experience into recruiter-friendly language<br>4. Optimize for ATS systems used in Germany<br>5. Highlight relevant skills for my target role
-                        </div>
-
-                        <h3>Prompt 2: Write a German Cover Letter (Anschreiben)</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-I need to write a professional German cover letter.<br><br><strong>Background Information:</strong><br>- Company name and job title: [Where you're applying]<br>- How I found the job: [Job board, referral, company website]<br>- Why I'm interested: [Your motivation]<br>- Key qualifications: [Your relevant experience and skills]<br>- Start date availability: [When you can start]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Write a professional German Anschreiben following German formatting<br>2. Address my motivation clearly and authentically<br>3. Connect my qualifications to the job requirements<br>4. Use appropriate formal German language<br>5. Keep it concise (maximum one page)
-                        </div>
-
-                        <h3>Prompt 3: Improve Bullet Points for Impact</h3>
-                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0; font-family: monospace; line-height: 1.6;">
-My CV bullet points are weak and need to show more impact.<br><br><strong>Background Information:</strong><br>- Current bullet points: [Paste 3-5 bullet points from your CV]<br>- The role or achievement: [What you actually did]<br><br><strong>Tasks for ChatGPT:</strong><br>1. Rewrite each bullet point using action verbs and quantifiable results<br>2. Show the difference between weak vs. strong bullet points<br>3. Use the STAR method where appropriate (Situation, Task, Action, Result)<br>4. Make them ATS-friendly with relevant keywords<br>5. Keep each bullet point to 1-2 lines maximum
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <!-- PROMPTS: WORKING STUDENT -->
+    <div class="card">
+      <h2>Working Student Prompts</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">CV Rewrite (No Experience)</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Degree, semester, coursework, tools known, language level.</p>
+          <p><strong>Prompt:</strong> "Act as a German recruiter. Suggest realistic Werkstudent roles for a student with no prior experience. Then, rewrite my CV to highlight my academic projects and transferable skills. Position me as reliable and trainable."</p>
         </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Hochschule Wismar</h4>
-                    <p>University of Applied Sciences<br>Technology, Business and Design</p>
-                    <p>Philipp-Müller-Straße 14<br>23966 Wismar, Germany</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Phone: +49 3841 753-0</p>
-                    <p>Email: <a href="mailto:postmaster@hs-wismar.de">postmaster@hs-wismar.de</a></p>
-                    <p><a href="https://www.hs-wismar.de" target="_blank" rel="noopener">www.hs-wismar.de</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>About This Portal</h4>
-                    <p>This is a student project created to support international students in their job search using AI-powered tools and resources.</p>
-                    <p><strong>Disclaimer:</strong> Content is informational and AI-supported. Always verify information for your specific situation.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hochschule Wismar. Student Project - International Management Program.</p>
-            </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Cover Letter Email</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Role name, company name, key motivation.</p>
+          <p><strong>Prompt:</strong> "Draft a short, professional German email (Anschreiben) to an HR manager expressing interest in the [Role Name] position. Keep it formal, polite, and emphasize my availability and eagerness to learn."</p>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <script src="js/main.js"></script>
+    <!-- PROMPTS: INTERNSHIP -->
+    <div class="card">
+      <h2>Internship Prompts</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Mandatory Internship (Pflichtpraktikum)</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Degree, specialization, confirmation it's mandatory.</p>
+          <p><strong>Prompt:</strong> "I am applying for a mandatory internship (Pflichtpraktikum) in Germany. Create a one-page, ATS-friendly German-style CV based on my profile. Translate my coursework into practical skills that a recruiter would value."</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Interview Prep (Cultural Fit)</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Company type (Startup/Corporate), role.</p>
+          <p><strong>Prompt:</strong> "I have an interview at a German [Company Type]. Help me answer common behavioral questions confidently without overselling myself. Highlight cultural mistakes international students often make."</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Rejection Analysis</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Paste your CV and the job description.</p>
+          <p><strong>Prompt:</strong> "Analyze my CV against this job description. Identify why a German recruiter might reject my application. Point out unclear elements or missing keywords and suggest concrete improvements."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMPTS: MASTER THESIS -->
+    <div class="card">
+      <h2>Master Thesis Prompts</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Finding Company Partners</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Degree, specialization, preferred industry.</p>
+          <p><strong>Prompt:</strong> "Identify types of companies in Germany (SME vs Corporate) open to Master's thesis collaborations in [Field]. Suggest specific departments to approach and list strategies to find thesis-friendly contacts."</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Proposal Email to Company</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Topic idea, value to company.</p>
+          <p><strong>Prompt:</strong> "Draft a convincing email to a hiring manager proposing a Master's thesis collaboration. Frame the thesis as a business solution that solves a specific problem for them, not just an academic requirement."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMPTS: FULL-TIME -->
+    <div class="card">
+      <h2>Full-Time Job Prompts</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">CV Optimization (ATS)</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Current CV, target job description.</p>
+          <p><strong>Prompt:</strong> "Rewrite my CV to position me as job-ready for full-time roles in Germany. Optimize it for ATS systems by including relevant keywords from this job description. Use strong action verbs."</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Salary Negotiation</div>
+        <div class="accordion-content">
+          <p><strong>Context to provide:</strong> Role, location, years of experience.</p>
+          <p><strong>Prompt:</strong> "I have received an offer for [Role] in [City]. The offer is [Amount]. Based on market standards, draft a polite but firm email negotiating for a higher salary or better benefits, explaining my value."</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Hochschule Wismar. All rights reserved.</p>
+  </footer>
+  <script src="./script.js"></script>
 </body>
 </html>

@@ -1,213 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Hochschule Wismar</title>
-    <meta name="description" content="Get in touch with the AI Job Search Support Portal team">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | AI Job Search Support | Hochschule Wismar</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Clickable Logo -->
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="nav-desktop">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="tools.html" class="nav-link">AI Tools</a>
-                    <a href="prompts.html" class="nav-link">AI Prompts</a>
-                    <a href="guidelines.html" class="nav-link">Guidelines</a>
-                    <a href="faqs.html" class="nav-link">FAQs</a>
-                    <a href="contact.html" class="nav-link active">Contact</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-nav">
-            <a href="index.html" class="mobile-nav-link">Home</a>
-            <a href="tools.html" class="mobile-nav-link">AI Tools</a>
-            <a href="prompts.html" class="mobile-nav-link">AI Prompts</a>
-            <a href="guidelines.html" class="mobile-nav-link">Guidelines</a>
-            <a href="faqs.html" class="mobile-nav-link">FAQs</a>
-            <a href="contact.html" class="mobile-nav-link active">Contact</a>
-        </nav>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="brand-title">Hochschule Wismar</span>
+        <span class="brand-subtitle">AI Job Search Support</span>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./tools.html">AI Tools</a>
+        <a class="nav-link" href="./prompts.html">AI Prompts</a>
+        <a class="nav-link" href="./guidelines.html">Guidelines</a>
+        <a class="nav-link" href="./faqs.html">FAQs</a>
+        <a class="nav-link active" href="./contact.html">Contact</a>
+      </nav>
     </div>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Contact Us</h1>
-            <p class="page-description">Have questions or suggestions? We'd love to hear from you!</p>
-        </div>
+  </header>
+  <main class="page">
+    <section class="hero">
+      <h1>Contact Us</h1>
+      <p>Have suggestions or need help? Send us a message.</p>
     </section>
-
-    <!-- Main Content -->
-    <main class="contact-section">
-        <div class="container">
-
-            <!-- Contact Form -->
-            <div class="contact-form-container">
-                <h2>Send Us a Message</h2>
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                    <!-- Split Name Fields -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName" class="form-label">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" class="form-input" required placeholder="John">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName" class="form-label">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" class="form-input" required placeholder="Doe">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Your Email *</label>
-                        <input type="email" id="email" name="email" class="form-input" required placeholder="john.doe@hs-wismar.de">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category" class="form-label">Message Category</label>
-                        <select id="category" name="category" class="form-input">
-                            <option value="question">Question about content</option>
-                            <option value="suggestion">Suggestion for improvement</option>
-                            <option value="tool">Suggest a new AI tool</option>
-                            <option value="bug">Report a technical issue</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Your Message *</label>
-                        <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us what's on your mind..."></textarea>
-                    </div>
-
-                    <button type="submit" class="form-button">Send Message</button>
-                    
-                    <p class="form-note">
-                        * Required fields. We typically respond within 2-3 business days.
-                    </p>
-                </form>
-            </div>
-
-            <!-- Connect with Hochschule Wismar (Below Form) -->
-            <div class="connect-section">
-                <h2>Connect With Hochschule Wismar</h2>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/school/hochschule-wismar" target="_blank" rel="noopener" class="social-link">
-                        <img src="assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://www.facebook.com/HSWismar" target="_blank" rel="noopener" class="social-link">
-                        <img src="assets/facebook-icon.png" alt="Facebook" class="social-icon">
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com/hswismar" target="_blank" rel="noopener" class="social-link">
-                        <img src="assets/instagram-icon.png" alt="Instagram" class="social-icon">
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://www.hs-wismar.de" target="_blank" rel="noopener" class="social-link">
-                        <img src="assets/website-icon.png" alt="Website" class="social-icon">
-                        <span>University Website</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Contact Information Cards -->
-            <div class="contact-info-grid">
-                <div class="info-card">
-                    <h3>Project Team</h3>
-                    <p>This portal is maintained by a team of five International Management Master's students at Hochschule Wismar (2025-2026).</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Academic Supervisor</h3>
-                    <p>Faculty of Business<br>Hochschule Wismar</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>University Contact</h3>
-                    <p>
-                        <strong>Hochschule Wismar</strong><br>
-                        Philipp-Müller-Straße 14<br>
-                        23966 Wismar, Germany
-                    </p>
-                    <p>
-                        Phone: +49 3841 753-0<br>
-                        Email: <a href="mailto:postmaster@hs-wismar.de">postmaster@hs-wismar.de</a><br>
-                        Web: <a href="https://www.hs-wismar.de" target="_blank" rel="noopener">www.hs-wismar.de</a>
-                    </p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Career Services</h3>
-                    <p>For official career counseling and application support:</p>
-                    <p>
-                        <strong>Career Center</strong><br>
-                        Hochschule Wismar<br>
-                        <a href="https://www.hs-wismar.de/studium/career-center" target="_blank" rel="noopener">Visit Career Center</a>
-                    </p>
-                </div>
-
-                <div class="info-card">
-                    <h3>International Office</h3>
-                    <p>For visa and work permit questions:</p>
-                    <p>
-                        <strong>International Office</strong><br>
-                        Hochschule Wismar<br>
-                        <a href="https://www.hs-wismar.de/international" target="_blank" rel="noopener">Visit International Office</a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Hochschule Wismar</h4>
-                    <p>University of Applied Sciences<br>Technology, Business and Design</p>
-                    <p>Philipp-Müller-Straße 14<br>23966 Wismar, Germany</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Phone: +49 3841 753-0</p>
-                    <p>Email: <a href="mailto:postmaster@hs-wismar.de">postmaster@hs-wismar.de</a></p>
-                    <p><a href="https://www.hs-wismar.de" target="_blank" rel="noopener">www.hs-wismar.de</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>About This Portal</h4>
-                    <p>This is a student project created to support international students in their job search using AI-powered tools and resources.</p>
-                    <p><strong>Disclaimer:</strong> Content is informational and AI-supported. Always verify information for your specific situation.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hochschule Wismar. Student Project - International Management Program.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <div class="card">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE" />
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Your Name" />
+        <label>Email Address</label>
+        <input type="email" name="email" required placeholder="student@hs-wismar.de" />
+        <label>Message</label>
+        <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 Hochschule Wismar. All rights reserved.</p>
+  </footer>
+  <script src="./script.js"></script>
 </body>
 </html>

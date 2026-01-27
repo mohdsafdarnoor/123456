@@ -1,267 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Tools Directory | Hochschule Wismar</title>
-  <meta name="description" content="Curated AI tools for job search, organized by category and stage" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Tools | AI Job Search Support | Hochschule Wismar</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="logo" href="index.html">Hochschule Wismar</a>
-
-      <nav class="nav" aria-label="Main navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link active" href="tools.html">AI Tools</a>
-        <a class="nav-link" href="prompts.html">AI Prompts</a>
-        <a class="nav-link" href="guidelines.html">Guidelines</a>
-        <a class="nav-link" href="faq.html">FAQs</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <span class="brand-title">Hochschule Wismar</span>
+        <span class="brand-subtitle">AI Job Search Support</span>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link active" href="./tools.html">AI Tools</a>
+        <a class="nav-link" href="./prompts.html">AI Prompts</a>
+        <a class="nav-link" href="./guidelines.html">Guidelines</a>
+        <a class="nav-link" href="./faqs.html">FAQs</a>
+        <a class="nav-link" href="./contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="page">
     <section class="hero">
-      <div class="hero-inner">
-        <h1 class="hero-title">AI Tools</h1>
-        <p class="hero-subtitle">Select a category and phase to view recommended tools.</p>
-      </div>
+      <h1>AI Tools Directory</h1>
+      <p>Select your career stage to see recommended AI tools for orientation, application, interview, and onboarding.</p>
     </section>
 
-    <section class="panel" aria-label="Filters">
-      <div class="panel-head">
-        <h2 class="panel-title">Find tools</h2>
-        <p class="panel-desc">Choose a category first, then a phase. Tools appear below.</p>
-      </div>
-
-      <div class="filters">
-        <div class="field">
-          <label class="label" for="categorySelect">Category</label>
-          <select id="categorySelect" class="select">
-            <option value="" selected disabled>Select category</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label class="label" for="phaseSelect">Phase</label>
-          <select id="phaseSelect" class="select" disabled>
-            <option value="" selected disabled>Select phase</option>
-          </select>
-        </div>
-
-        <div class="field field--search">
-          <label class="label" for="searchInput">Search (optional)</label>
-          <input id="searchInput" class="input" type="text" placeholder="e.g., CV, interview, research…" />
-        </div>
-
-        <div class="field field--actions">
-          <button id="clearBtn" class="btn btn-ghost" type="button">Clear</button>
+    <!-- 1. WORKING STUDENT -->
+    <div class="card">
+      <h2>Working Student (Werkstudent)</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Orientation (Find Opportunities)</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>LinkedIn Career Explorer:</strong> Identify skill gaps and role options.</li>
+            <li><strong>JobMensa:</strong> Focused on student jobs in Germany.</li>
+            <li><strong>StepStone:</strong> Large database for part-time work.</li>
+            <li><strong>Indeed:</strong> Broad search for flexible student roles.</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <section class="results" aria-label="Tool results">
-      <div class="results-head">
-        <h2 class="results-title">Tools</h2>
-        <p id="resultsMeta" class="results-meta">Choose a category and phase to see tools.</p>
+      <div class="accordion-item">
+        <div class="accordion-header">Application</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Canva:</strong> Clean, simple student CV templates.</li>
+            <li><strong>Resume.io:</strong> ATS-friendly resume builder.</li>
+            <li><strong>Simplify:</strong> Auto-fill applications to save time.</li>
+            <li><strong>Loop CV:</strong> Automate job applications.</li>
+          </ul>
+        </div>
       </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Interview</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Google Interview Warmup:</strong> Practice basic questions.</li>
+            <li><strong>Interview Lift:</strong> Mock interviews for students.</li>
+            <li><strong>Yoodli:</strong> Improve speaking confidence.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Onboarding</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>DeepL:</strong> Essential for German workplace communication.</li>
+            <li><strong>ChatGPT:</strong> Draft emails and clarify tasks.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <div id="toolsGrid" class="tools-grid" aria-live="polite"></div>
+    <!-- 2. INTERNSHIP -->
+    <div class="card">
+      <h2>Internship</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Orientation</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Handshake:</strong> Student-focused internship discovery.</li>
+            <li><strong>MeinPraktikum.de:</strong> Germany-specific internship portal.</li>
+            <li><strong>LinkedIn Jobs:</strong> Filter for "Internship" role type.</li>
+            <li><strong>Coursera:</strong> Skill prep for specific internships.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Application</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>VMock:</strong> Academic resume feedback and scoring.</li>
+            <li><strong>Jobsgpt:</strong> Match CVs to internship descriptions.</li>
+            <li><strong>Canva:</strong> Creative portfolios for design roles.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Interview</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Google Interview Warmup:</strong> Entry-level focus.</li>
+            <li><strong>Elevator Pitch App:</strong> Perfect your "Tell me about yourself".</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Onboarding</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>ChatGPT:</strong> Write internship reports and daily summaries.</li>
+            <li><strong>DeepL:</strong> Translate technical documentation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <p id="emptyState" class="empty" hidden>
-        No tools found for this selection. Try another category/phase or clear search.
-      </p>
-    </section>
+    <!-- 3. MASTER THESIS -->
+    <div class="card">
+      <h2>Master Thesis (Company Collaboration)</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Orientation</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Excelerate:</strong> Connects students with thesis companies.</li>
+            <li><strong>Studyond:</strong> Thesis project matching.</li>
+            <li><strong>Thesisforyou:</strong> Platform for thesis topics.</li>
+            <li><strong>LinkedIn:</strong> Search "Thesis" in Jobs section.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Application</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Cheetah AI:</strong> Draft thesis proposals and motivation letters.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Interview (Supervisor Meetings)</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Final Round AI:</strong> Structure your research pitch.</li>
+            <li><strong>Interview Lift:</strong> Practice defending your topic.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Onboarding (Research Phase)</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>ChatGPT:</strong> Literature review assistance and outlining.</li>
+            <li><strong>Coach:</strong> Productivity tracking for research goals.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. FULL-TIME -->
+    <div class="card">
+      <h2>Full-Time Job</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Orientation</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>EURES:</strong> European Employment Services.</li>
+            <li><strong>XING:</strong> Essential for German professional market.</li>
+            <li><strong>Jobright.ai:</strong> AI-powered job recommendations.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Application</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>VMock:</strong> Professional resume optimization.</li>
+            <li><strong>Europass:</strong> Standardized EU CV format.</li>
+            <li><strong>Notion / Airtable:</strong> Track applications.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Interview</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Final Round AI:</strong> Real-time interview assistance.</li>
+            <li><strong>Interview Lift:</strong> Behavioral (STAR method) practice.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Onboarding</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Career Mastery:</strong> Long-term career planning tools.</li>
+            <li><strong>ChatGPT:</strong> Professional email etiquette and cultural norms.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <p>© 2026 Hochschule Wismar. Student Project - International Management Program.</p>
-    </div>
+  <footer class="footer">
+    <p>© 2026 Hochschule Wismar. All rights reserved.</p>
   </footer>
-
-  <script>
-    // -----------------------------
-    // DATA: Edit this section only
-    // -----------------------------
-    const TOOLS_DATA = {
-      "Work Student": {
-        "Orientation": [
-          { name: "LinkedIn", url: "https://www.linkedin.com/", desc: "Find working student roles, company pages, and recruiters." },
-          { name: "StepStone", url: "https://www.stepstone.de/", desc: "Search roles and filter by location and contract type." },
-          { name: "Indeed", url: "https://www.indeed.com/", desc: "Job discovery and alerts." }
-        ],
-        "Interview Preparation": [
-          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Mock interviews, STAR answers, role-specific questions." },
-          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Research company, role requirements, and industry context." }
-        ],
-        "Application": [
-          { name: "Canva", url: "https://www.canva.com/", desc: "CV templates and clean layout exports." },
-          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Language quality checks for CV and cover letter." }
-        ]
-      },
-
-      "Internship": {
-        "Orientation": [
-          { name: "LinkedIn", url: "https://www.linkedin.com/", desc: "Search internships and connect with recruiters." },
-          { name: "ErasmusIntern", url: "https://erasmusintern.org/", desc: "Internship listings across Europe." }
-        ],
-        "Interview Preparation": [
-          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Practice interview questions and improve answers." },
-          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Research industries, companies and role expectations." }
-        ],
-        "Application": [
-          { name: "Canva", url: "https://www.canva.com/", desc: "Create a clean, modern CV." },
-          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Polish cover letters and emails." }
-        ]
-      },
-
-      "Master Thesis": {
-        "Topic & Literature": [
-          { name: "Google Scholar", url: "https://scholar.google.com/", desc: "Find peer-reviewed papers and citations." },
-          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Fast background research with sources." }
-        ],
-        "Writing & Structure": [
-          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Outline chapters, improve clarity, and draft sections." },
-          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Grammar, tone, and readability improvements." }
-        ]
-      },
-
-      "Full-Time": {
-        "Orientation": [
-          { name: "LinkedIn", url: "https://www.linkedin.com/", desc: "Full-time roles, networking, and recruiter outreach." },
-          { name: "StepStone", url: "https://www.stepstone.de/", desc: "Job search and filters for Germany/EU." }
-        ],
-        "Interview Preparation": [
-          { name: "ChatGPT", url: "https://chat.openai.com/", desc: "Behavioral + technical interview prep." },
-          { name: "Perplexity", url: "https://www.perplexity.ai/", desc: "Company and market research." }
-        ],
-        "Application": [
-          { name: "Canva", url: "https://www.canva.com/", desc: "Professional resume layout." },
-          { name: "Grammarly", url: "https://www.grammarly.com/", desc: "Error-free applications and emails." }
-        ]
-      }
-    };
-
-    // -----------------------------
-    // UI Logic
-    // -----------------------------
-    const categorySelect = document.getElementById("categorySelect");
-    const phaseSelect = document.getElementById("phaseSelect");
-    const searchInput = document.getElementById("searchInput");
-    const clearBtn = document.getElementById("clearBtn");
-    const toolsGrid = document.getElementById("toolsGrid");
-    const emptyState = document.getElementById("emptyState");
-    const resultsMeta = document.getElementById("resultsMeta");
-
-    function initCategories(){
-      Object.keys(TOOLS_DATA).forEach(cat => {
-        const opt = document.createElement("option");
-        opt.value = cat;
-        opt.textContent = cat;
-        categorySelect.appendChild(opt);
-      });
-    }
-
-    function setPhasesForCategory(category){
-      phaseSelect.innerHTML = '<option value="" selected disabled>Select phase</option>';
-
-      if(!category || !TOOLS_DATA[category]){
-        phaseSelect.disabled = true;
-        return;
-      }
-
-      const phases = Object.keys(TOOLS_DATA[category]);
-      phases.forEach(phase => {
-        const opt = document.createElement("option");
-        opt.value = phase;
-        opt.textContent = phase;
-        phaseSelect.appendChild(opt);
-      });
-
-      phaseSelect.disabled = false;
-    }
-
-    function normalize(s){
-      return (s || "").toLowerCase().trim();
-    }
-
-    function renderTools(){
-      const category = categorySelect.value;
-      const phase = phaseSelect.value;
-      const q = normalize(searchInput.value);
-
-      toolsGrid.innerHTML = "";
-      emptyState.hidden = true;
-
-      if(!category || !phase){
-        resultsMeta.textContent = "Choose a category and phase to see tools.";
-        return;
-      }
-
-      let tools = (TOOLS_DATA[category]?.[phase] || []);
-
-      if(q){
-        tools = tools.filter(t =>
-          normalize(t.name).includes(q) || normalize(t.desc).includes(q)
-        );
-      }
-
-      resultsMeta.textContent = q
-        ? `${category} → ${phase} • Showing ${tools.length} result(s) for "${searchInput.value.trim()}".`
-        : `${category} → ${phase} • Showing ${tools.length} tool(s).`;
-
-      if(tools.length === 0){
-        emptyState.hidden = false;
-        return;
-      }
-
-      tools.forEach(tool => {
-        const card = document.createElement("article");
-        card.className = "tool-card";
-
-        card.innerHTML = `
-          <div class="tool-top">
-            <h3 class="tool-name">${tool.name}</h3>
-            <span class="badge">AI Tool</span>
-          </div>
-          <p class="tool-desc">${tool.desc || ""}</p>
-          <a class="tool-btn" href="${tool.url}" target="_blank" rel="noopener">
-            Open tool
-            <span aria-hidden="true">→</span>
-          </a>
-        `;
-
-        toolsGrid.appendChild(card);
-      });
-    }
-
-    function clearAll(){
-      categorySelect.value = "";
-      phaseSelect.value = "";
-      phaseSelect.disabled = true;
-      phaseSelect.innerHTML = '<option value="" selected disabled>Select phase</option>';
-      searchInput.value = "";
-      toolsGrid.innerHTML = "";
-      emptyState.hidden = true;
-      resultsMeta.textContent = "Choose a category and phase to see tools.";
-    }
-
-    categorySelect.addEventListener("change", () => {
-      setPhasesForCategory(categorySelect.value);
-      phaseSelect.value = "";
-      renderTools();
-    });
-
-    phaseSelect.addEventListener("change", renderTools);
-    searchInput.addEventListener("input", renderTools);
-    clearBtn.addEventListener("click", clearAll);
-
-    initCategories();
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>

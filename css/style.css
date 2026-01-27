@@ -35,7 +35,7 @@ a:hover { text-decoration: underline; }
   background-color: var(--hsw-green);
   color: var(--white);
   padding: 0 20px;
-  height: 80px;
+  height: 80px;  /* Fixed height */
   display: flex;
   align-items: center;
   position: sticky;
@@ -51,42 +51,41 @@ a:hover { text-decoration: underline; }
   display: flex;
   justify-content: space-between;
   
-  /* NEW: Forces container to be full height so we can move items inside it */
-  height: 100%; 
+  /* CRITICAL: Makes the inner box fill the header height */
+  height: 100%;  
   
-  /* Keeps the Navigation and Hamburger centered */
+  /* Vertically centers Nav & Hamburger */
   align-items: center; 
 }
 
 /* Logo Section */
 .brand {
   display: flex;
-  align-items: center;
   gap: 15px;
   text-decoration: none !important;
   
-  /* MOVED DOWN SLIGHTLY (User Request) */
-  padding-top: 25px; 
-}
-
-.brand {
-  display: flex;
-  gap: 15px;
-  text-decoration: none !important;
-  
-  /* KEEPS LOGO AND TEXT ALIGNED SIDE-BY-SIDE */
+  /* Aligns logo and text side-by-side */
   align-items: center; 
   
-  /* NEW: PUSHES THE WHOLE GROUP TO THE BOTTOM */
+  /* PUSHES LOGO GROUP TO THE BOTTOM EDGE */
   align-self: flex-end; 
   
-  /* ADJUST THIS: 0px touches the line exactly. 5px gives a tiny breathing room. */
-  padding-bottom: 5px; 
+  /* 0px = Touches the green line exactly. */
+  padding-bottom: 0px; 
+}
+
+/* THIS WAS MISSING - CONTROLS LOGO SIZE */
+.brand-logo {
+  height: 50px;  /* Normal Size */
+  width: auto;
+  padding: 0;
+  display: block; /* Ensures it behaves correctly */
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  padding-bottom: 8px; /* Lifts text slightly so it aligns with logo center */
 }
 
 .brand-title {
@@ -151,6 +150,7 @@ a:hover { text-decoration: underline; }
   padding: 15px; 
   border-bottom: 1px solid rgba(255,255,255,0.1); 
 }
+
 
 /* 4. MAIN CONTENT */
 .page {

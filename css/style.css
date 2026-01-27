@@ -1,259 +1,173 @@
-/* HS Wismar CD-compliant styles - Business Faculty (Green #339933) */
+/* HS Wismar Business Faculty Design (Green #339933) */
 :root {
-  --hsw-green: #339933;
-  --hsw-anthrazit: #2f3229;
-  --hsw-hellgrau: #afafaf;
-  --text-dark: #2f3229;
-  --text-muted: #6b7280;
-  --bg-body: #f9fafb;
-  --bg-card: #ffffff;
-  --border-light: rgba(0,0,0,.08);
+  --hsw-green: #339933;       /* Business Faculty Color */
+  --hsw-anthrazit: #2f3229;   /* Text & Footer */
+  --hsw-hellgrau: #f2f2f2;    /* Backgrounds */
+  --hsw-orange: #ff5d00;      /* Highlights/Buttons */
+  --white: #ffffff;
 }
 
+/* 1. RESET & BASICS */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-
 body {
-  font-family: 'Meta', Arial, system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Meta', 'Arial', sans-serif; /* HS Wismar font fallback */
+  background-color: var(--hsw-hellgrau);
+  color: var(--hsw-anthrazit);
   font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-dark);
-  background: var(--bg-body);
-  pointer-events: auto !important;
+  line-height: 1.5;
 }
 
-/* CLICK FIX: no overlays steal clicks */
-.overlay, .loader, .loading, .backdrop, .modal-backdrop, #overlay, #loading {
-  pointer-events: none !important;
-  z-index: 0 !important;
-}
-
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* HEADER */
+/* 2. HEADER (Green Bar) */
 .topbar {
+  background-color: var(--hsw-green); /* BUSINESS GREEN */
+  color: var(--white);
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: var(--hsw-anthrazit);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  z-index: 1000;
 }
 
 .topbar-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 16px 20px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
 .brand-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .brand-subtitle {
   font-size: 14px;
-  color: var(--hsw-hellgrau);
+  opacity: 0.9;
+  font-weight: normal;
   margin-left: 10px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  padding-left: 10px;
 }
 
-.nav {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
+/* 3. NAVIGATION */
+.nav { display: flex; gap: 20px; }
 .nav-link {
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 500;
-  color: #fff;
-  transition: all .2s;
-}
-
-.nav-link:hover {
-  background: rgba(255,255,255,.12);
+  color: var(--white);
   text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+  background-color: rgba(0,0,0,0.15); /* Slightly darker green effect */
 }
 
-.nav-link.active {
-  background: var(--hsw-green);
-  color: #fff;
-}
-
-/* MAIN CONTENT */
+/* 4. LAYOUT */
 .page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 20px 60px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 80vh;
 }
 
 .hero {
-  margin-bottom: 28px;
+  text-align: center;
+  margin-bottom: 50px;
 }
-
 .hero h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--hsw-anthrazit);
-  margin: 0 0 10px;
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: var(--hsw-green); /* Green Headlines */
 }
+.hero p { font-size: 18px; color: #666; }
 
-.hero p {
-  font-size: 17px;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-/* CARDS */
+/* 5. CARDS */
 .card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  border-left: 5px solid var(--hsw-green); /* Green accent border */
 }
 
 .card h2 {
-  font-size: 22px;
-  font-weight: 700;
+  margin-top: 0;
   color: var(--hsw-anthrazit);
-  margin: 0 0 12px;
+  font-size: 22px;
 }
 
-.card p {
-  font-size: 16px;
-  color: var(--text-muted);
-  margin: 0 0 16px;
+/* 6. LISTS & LINKS (Tools) */
+ul { padding-left: 20px; }
+li { margin-bottom: 12px; }
+
+/* Tool Links */
+.tool-link {
+  color: var(--hsw-green);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.tool-link:hover {
+  border-bottom-color: var(--hsw-green);
 }
 
-.card ul {
-  margin: 0 0 16px;
-  padding-left: 20px;
-}
-
-.card li {
-  margin-bottom: 8px;
-  color: var(--text-dark);
-}
-
-/* BUTTONS */
+/* 7. BUTTONS */
 .btn {
   display: inline-block;
-  padding: 12px 20px;
-  background: var(--hsw-green);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: all .2s;
-}
-
-.btn:hover {
-  filter: brightness(.92);
+  background-color: var(--hsw-anthrazit); /* Dark buttons for contrast */
+  color: var(--white);
+  padding: 12px 24px;
   text-decoration: none;
-  transform: translateY(-1px);
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: transform 0.1s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: #000;
 }
 
-.btn-secondary {
-  background: var(--hsw-anthrazit);
-}
-
-/* ACCORDION (for FAQs) */
-.accordion-item {
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  margin-bottom: 12px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  padding: 16px 20px;
-  background: var(--bg-card);
-  cursor: pointer;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.accordion-header:hover {
-  background: rgba(51,153,51,.04);
-}
-
-.accordion-content {
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s, padding .3s;
-}
-
-.accordion-content.active {
-  padding: 16px 20px;
-  max-height: 600px;
-}
-
-/* FORM */
-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-form input, form select, form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: inherit;
-  margin-bottom: 16px;
-}
-
-form input:focus, form select:focus, form textarea:focus {
-  outline: 2px solid var(--hsw-green);
-  border-color: var(--hsw-green);
-}
-
-/* FOOTER */
+/* 8. FOOTER */
 .footer {
-  background: var(--hsw-anthrazit);
-  color: var(--hsw-hellgrau);
-  padding: 20px;
+  background-color: var(--hsw-anthrazit);
+  color: #999;
   text-align: center;
-  font-size: 14px;
+  padding: 40px 0;
   margin-top: 60px;
 }
 
-.footer p {
-  max-width: 1200px;
-  margin: 0 auto;
+/* 9. ACCORDION (FAQs) */
+.accordion-item { border-bottom: 1px solid #eee; }
+.accordion-header {
+  padding: 15px 0;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
+.accordion-content {
+  display: none;
+  padding-bottom: 15px;
+  color: #555;
+}
+.accordion-content.active { display: block; }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .hero h1 {
-    font-size: 26px;
-  }
-  
-  .card {
-    padding: 18px;
-  }
+/* 10. FORM */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
 }

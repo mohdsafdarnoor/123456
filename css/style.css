@@ -255,7 +255,7 @@ form input, form select, form textarea {
 
 /* 9. RESPONSIVE (Mobile Styles) */
 @media (max-width: 768px) {
-  .nav { display: none; } /* Hide desktop nav */
+  .nav { display: block; } /* Show desktop nav */
   .hamburger { display: block; } /* Show hamburger */
   
   .topbar { padding: 0 15px; }

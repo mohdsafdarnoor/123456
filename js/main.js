@@ -1,123 +1,141 @@
-// =========================================
-// AI JOB SEARCH SUPPORT - SCRIPT.JS
-// Hochschule Wismar Business Faculty
-// Master International Management Project
-// =========================================
+// ============================================================
+// HS WISMAR - AI JOB SEARCH SUPPORT PLATFORM
+// Main JavaScript File (Business Faculty Project)
+// Last Updated: January 2026
+// ============================================================
 
-(function() {
+(function () {
   'use strict';
 
-  // =========================================
-  // 1. CLICK FIX - Ensure page is always clickable
-  // =========================================
-  function enableClicks() {
+  // ============================================================
+  // 1. CLICK & INTERACTION FIX (CRITICAL)
+  // Ensures all overlays are removed and page is clickable
+  // ============================================================
+  function enablePageInteractions() {
+    console.log("✅ Interactions Enabled: Click fix applied.");
+    
+    // Force pointer events on body
     document.documentElement.style.pointerEvents = "auto";
     document.body.style.pointerEvents = "auto";
 
-    // Remove any overlay elements that might block clicks
-    const overlaySelectors = [
+    // Hide any potential blocking overlays
+    const blockers = [
       ".overlay", ".loader", ".loading", ".backdrop", 
       ".modal-backdrop", "#overlay", "#loading", "#loadingDiv"
     ];
 
-    overlaySelectors.forEach(selector => {
-      document.querySelectorAll(selector).forEach(element => {
-        element.style.pointerEvents = "none";
-        // If it's a loader, hide it
-        if (element.classList.contains("loader") || 
-            element.id === "loading" || 
-            element.id === "loadingDiv") {
-          element.style.display = "none";
-        }
+    blockers.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.display = "none";
+        el.style.pointerEvents = "none";
+        el.style.zIndex = "-1";
       });
     });
   }
 
-  // Run on DOMContentLoaded and window.load
-  document.addEventListener("DOMContentLoaded", enableClicks);
-  window.addEventListener("load", enableClicks);
+  // Run immediately and on load
+  document.addEventListener("DOMContentLoaded", enablePageInteractions);
+  window.addEventListener("load", enablePageInteractions);
 
 
-  // =========================================
+  // ============================================================
   // 2. ACTIVE NAVIGATION HIGHLIGHTING
-  // =========================================
-  function setActiveNavigation() {
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  // Adds 'active' class to the current page's link in the header
+  // ============================================================
+  function setActiveNavLink() {
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
     const navLinks = document.querySelectorAll(".nav-link");
-    
+
     navLinks.forEach(link => {
-      const linkHref = link.getAttribute("href");
-      if (linkHref) {
-        const linkPage = linkHref.replace("./", "");
-        
-        // Remove active class from all
-        link.classList.remove("active");
-        
-        // Add active class to current page
-        if (linkPage === currentPage || 
-            (currentPage === "" && linkPage === "index.html")) {
-          link.classList.add("active");
-        }
+      // Get the href attribute (e.g., "./tools.html" -> "tools.html")
+      const linkHref = link.getAttribute("href").replace("./", "");
+
+      // Remove existing active class
+      link.classList.remove("active");
+
+      // Add active class if it matches current page
+      if (linkHref === currentPath || (currentPath === "" && linkHref === "index.html")) {
+        link.classList.add("active");
       }
     });
   }
 
-  document.addEventListener("DOMContentLoaded", setActiveNavigation);
+  document.addEventListener("DOMContentLoaded", setActiveNavLink);
 
 
-  // =========================================
-  // 3. ACCORDION LOGIC (for FAQs, Tools sections)
-  // =========================================
+  // ============================================================
+  // 3. ACCORDION LOGIC (One-Open-At-A-Time)
+  // Used for FAQs and AI Tools sections
+  // ============================================================
   function initAccordions() {
-    const accordionHeaders = document.querySelectorAll(".accordion-header");
-    
-    accordionHeaders.forEach(header => {
-      header.addEventListener("click", function() {
-        const content = this.nextElementSibling;
-        
-        // Check if this accordion is currently open
-        const isOpen = content.classList.contains("active");
-        
-        // Close all accordions in the same parent container
-        const parentCard = this.closest(".card");
-        if (parentCard) {
-          parentCard.querySelectorAll(".accordion-content").forEach(item => {
-            item.classList.remove("active");
-          });
-        }
-        
-        // Toggle current accordion (open if it was closed)
-        if (!isOpen) {
-          content.classList.add("active");
-        }
-      });
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach(header => {
+      // Remove any existing listeners to prevent duplicates (if re-initialized)
+      header.removeEventListener("click", toggleAccordion);
+      header.addEventListener("click", toggleAccordion);
     });
+  }
+
+  function toggleAccordion(e) {
+    const header = e.currentTarget;
+    const content = header.nextElementSibling;
+    const parentContainer = header.closest(".card") || document.body;
+    
+    // Check if currently open
+    const isAlreadyOpen = content.classList.contains("active");
+
+    // Close ALL other accordions in the same container
+    parentContainer.querySelectorAll(".accordion-content").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    parentContainer.querySelectorAll(".accordion-header").forEach(h => {
+      h.classList.remove("active"); // Removes the '-' icon style
+    });
+
+    // If it wasn't open, open it now
+    if (!isAlreadyOpen) {
+      content.classList.add("active");
+      header.classList.add("active");
+    }
   }
 
   document.addEventListener("DOMContentLoaded", initAccordions);
 
 
-  // =========================================
-  // 4. SMOOTH SCROLL TO ANCHOR LINKS
-  // =========================================
+  // ============================================================
+  // 4. SMOOTH SCROLLING FOR ANCHOR LINKS
+  // Handles links like <a href="#working-student">
+  // ============================================================
   function initSmoothScroll() {
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    
-    anchorLinks.forEach(link => {
-      link.addEventListener("click", function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
         const targetId = this.getAttribute("href");
-        
-        // Skip if it's just "#" (empty anchor)
+
+        // Ignore empty '#' links
         if (targetId === "#") return;
-        
+
         const targetElement = document.querySelector(targetId);
-        
         if (targetElement) {
           e.preventDefault();
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+          
+          // Scroll to element with a small offset for the sticky header
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
           });
+
+          // If inside an accordion (e.g., Tools page), open it
+          const parentAccordion = targetElement.closest(".accordion-content");
+          if (parentAccordion) {
+            parentAccordion.classList.add("active");
+            parentAccordion.previousElementSibling.classList.add("active");
+          }
         }
       });
     });
@@ -126,73 +144,52 @@
   document.addEventListener("DOMContentLoaded", initSmoothScroll);
 
 
-  // =========================================
-  // 5. MOBILE MENU TOGGLE (if you add hamburger later)
-  // =========================================
-  function initMobileMenu() {
-    const hamburger = document.querySelector(".hamburger");
-    const mobileNav = document.querySelector(".mobile-nav");
-    
-    if (hamburger && mobileNav) {
-      hamburger.addEventListener("click", function() {
-        mobileNav.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      // Close mobile menu when clicking a link
-      const mobileLinks = mobileNav.querySelectorAll(".nav-link");
-      mobileLinks.forEach(link => {
-        link.addEventListener("click", function() {
-          mobileNav.classList.remove("active");
-          hamburger.classList.remove("active");
-        });
-      });
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", initMobileMenu);
-
-
-  // =========================================
-  // 6. FORM SUBMISSION HANDLER (for Contact Page)
-  // =========================================
+  // ============================================================
+  // 5. CONTACT FORM SUBMISSION (Web3Forms)
+  // Handles form submission without page reload
+  // ============================================================
   function initContactForm() {
-    const contactForm = document.querySelector("form[action*='web3forms']");
+    const form = document.querySelector("form[action*='web3forms']");
     
-    if (contactForm) {
-      contactForm.addEventListener("submit", async function(e) {
-        e.preventDefault();
-        
-        const submitButton = contactForm.querySelector("button[type='submit']");
-        const originalText = submitButton.textContent;
-        
-        // Show loading state
-        submitButton.textContent = "Sending...";
-        submitButton.disabled = true;
-        
+    if (form) {
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault(); // Stop default redirect
+
+        const submitBtn = form.querySelector("button[type='submit']");
+        const originalText = submitBtn.textContent;
+
+        // Visual feedback: Loading state
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.7";
+
         try {
-          const formData = new FormData(contactForm);
-          const response = await fetch(contactForm.action, {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
             method: "POST",
             body: formData,
             headers: {
               "Accept": "application/json"
             }
           });
-          
+
           if (response.ok) {
-            alert("✅ Message sent successfully! We'll get back to you soon.");
-            contactForm.reset();
+            // Success
+            alert("✅ Message Sent Successfully! We will get back to you soon.");
+            form.reset();
           } else {
+            // Server error
             throw new Error("Form submission failed");
           }
         } catch (error) {
-          alert("❌ There was an error sending your message. Please try again or email us directly.");
-          console.error("Form submission error:", error);
+          // Network or other error
+          alert("❌ Error sending message. Please try again later or email us directly.");
+          console.error("Form Error:", error);
         } finally {
-          // Reset button state
-          submitButton.textContent = originalText;
-          submitButton.disabled = false;
+          // Reset button
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
         }
       });
     }
@@ -201,57 +198,24 @@
   document.addEventListener("DOMContentLoaded", initContactForm);
 
 
-  // =========================================
-  // 7. SCROLL TO TOP BUTTON (Optional Enhancement)
-  // =========================================
-  function initScrollToTop() {
-    const scrollButton = document.getElementById("scroll-to-top");
-    
-    if (scrollButton) {
-      // Show/hide button based on scroll position
-      window.addEventListener("scroll", function() {
-        if (window.pageYOffset > 300) {
-          scrollButton.style.display = "block";
-        } else {
-          scrollButton.style.display = "none";
-        }
-      });
-      
-      // Scroll to top when clicked
-      scrollButton.addEventListener("click", function() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      });
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", initScrollToTop);
-
-
-  // =========================================
-  // 8. EXTERNAL LINK WARNING (Optional Security)
-  // =========================================
-  function initExternalLinks() {
-    const externalLinks = document.querySelectorAll('a[target="_blank"]');
-    
-    externalLinks.forEach(link => {
-      // Add security attributes
-      if (!link.hasAttribute("rel")) {
-        link.setAttribute("rel", "noopener noreferrer");
-      }
+  // ============================================================
+  // 6. EXTERNAL LINK SECURITY
+  // Adds 'rel="noopener noreferrer"' to all external links
+  // ============================================================
+  function secureExternalLinks() {
+    const links = document.querySelectorAll('a[target="_blank"]');
+    links.forEach(link => {
+      link.setAttribute("rel", "noopener noreferrer");
     });
   }
 
-  document.addEventListener("DOMContentLoaded", initExternalLinks);
+  document.addEventListener("DOMContentLoaded", secureExternalLinks);
 
 
-  // =========================================
-  // CONSOLE CONFIRMATION
-  // =========================================
-  console.log("✅ AI Job Search Support - JavaScript Loaded Successfully");
-  console.log("🎓 Hochschule Wismar Business Faculty | Master International Management");
-  console.log("📅 2026");
+  // ============================================================
+  // 7. CONSOLE SIGNATURE
+  // ============================================================
+  console.log("%c🎓 Hochschule Wismar | AI Job Search Platform", "color: #339933; font-size: 14px; font-weight: bold;");
+  console.log("Developed by Master International Management Students (2026)");
 
 })();

@@ -135,53 +135,71 @@
   </main>
 
   <!-- REAL UNIVERSITY FOOTER -->
+    <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      
-      <!-- Column 1: Contact -->
       <div>
         <h3>Kontakt</h3>
-        <p>
-          Hochschule Wismar<br>
-          University of Applied Sciences<br>
-          Technology, Business and Design<br><br>
-          Philipp-Müller-Straße 14<br>
-          23966 Wismar
-        </p>
-        <p style="margin-top: 15px;">
-          <a href="mailto:presse@hs-wismar.de">presse@hs-wismar.de</a>
-        </p>
+        <p>Hochschule Wismar<br>Philipp-Müller-Straße 14<br>23966 Wismar</p>
       </div>
-
-      <!-- Column 2: Information -->
       <div>
         <h3>Information</h3>
-        <ul>
-          <li><a href="#">Barrierefreiheit</a></li>
-          <li><a href="#">Datenschutz</a></li>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Lageplan</a></li>
-        </ul>
+        <ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li></ul>
       </div>
-
-      <!-- Column 3: Quick Links -->
       <div>
         <h3>Quick Links</h3>
-        <ul>
-          <li><a href="https://lsf.hs-wismar.de/" target="_blank">LSF Portal</a></li>
-          <li><a href="https://studip.hs-wismar.de/" target="_blank">Stud.IP</a></li>
-          <li><a href="https://ilias.hs-wismar.de/" target="_blank">ILIAS</a></li>
-          <li><a href="https://mensaplan.studierendenwerk-rostock-wismar.de/" target="_blank">Mensa</a></li>
-        </ul>
+        <ul><li><a href="#">LSF Portal</a></li><li><a href="#">Stud.IP</a></li></ul>
       </div>
-
     </div>
-
     <div class="footer-bottom">
-      <p>&copy; 2026 Hochschule Wismar. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2026 Hochschule Wismar.</p>
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <!-- 🔴 DIRECT SCRIPT FIX - NO EXTERNAL FILE NEEDED -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      console.log("✅ Script Loaded Successfully");
+
+      // 1. SELECT ELEMENTS
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      // 2. CHECK IF THEY EXIST
+      if (hamburger && mobileNav) {
+        
+        // 3. ADD CLICK EVENT
+        hamburger.addEventListener("click", function(e) {
+          e.preventDefault(); // Stop any default behavior
+          e.stopPropagation(); // Stop clicks from bubbling
+          
+          // Toggle Class
+          mobileNav.classList.toggle("active");
+          
+          // Toggle Icon
+          if (mobileNav.classList.contains("active")) {
+            hamburger.innerHTML = "✕"; // Close icon
+          } else {
+            hamburger.innerHTML = "☰"; // Hamburger icon
+          }
+          
+          console.log("🍔 Hamburger Clicked! Menu is now: " + (mobileNav.classList.contains("active") ? "OPEN" : "CLOSED"));
+        });
+
+        // 4. CLOSE WHEN CLICKING A LINK
+        const navLinks = mobileNav.querySelectorAll("a");
+        navLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+            hamburger.innerHTML = "☰";
+          });
+        });
+
+      } else {
+        console.error("❌ ERROR: Hamburger or Mobile Nav element not found in HTML!");
+      }
+    });
+  </script>
+
 </body>
 </html>

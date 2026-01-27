@@ -49,8 +49,13 @@ a:hover { text-decoration: underline; }
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  
+  /* NEW: Forces container to be full height so we can move items inside it */
+  height: 100%; 
+  
+  /* Keeps the Navigation and Hamburger centered */
+  align-items: center; 
 }
 
 /* Logo Section */
@@ -64,12 +69,19 @@ a:hover { text-decoration: underline; }
   padding-top: 25px; 
 }
 
-.brand-logo {
-  height: 50px; 
-  width: auto;
-  /* Removed background: white; so transparency works */
-  padding: 0;
-  border-radius: 4px;
+.brand {
+  display: flex;
+  gap: 15px;
+  text-decoration: none !important;
+  
+  /* KEEPS LOGO AND TEXT ALIGNED SIDE-BY-SIDE */
+  align-items: center; 
+  
+  /* NEW: PUSHES THE WHOLE GROUP TO THE BOTTOM */
+  align-self: flex-end; 
+  
+  /* ADJUST THIS: 0px touches the line exactly. 5px gives a tiny breathing room. */
+  padding-bottom: 5px; 
 }
 
 .brand-text {

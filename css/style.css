@@ -64,8 +64,7 @@ a:hover { text-decoration: underline; }
 .brand-logo {
   height: 50px; /* Adjust based on your logo file */
   width: auto;
-  background: white; /* Optional: if logo is transparent and needs contrast */
-  padding: 2px;
+  padding: 0px;
   border-radius: 4px;
 }
 

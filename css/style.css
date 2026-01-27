@@ -1,3 +1,4 @@
+
 /* ============================================================
    HOCHSCHULE WISMAR - AI JOB SEARCH SUPPORT
    Corporate Design Stylesheet (Business Faculty)
@@ -35,7 +36,7 @@ a:hover { text-decoration: underline; }
   background-color: var(--hsw-green);
   color: var(--white);
   padding: 0 20px;
-  height: 60px;  /* Reduced Height */
+  height: 60px;  /* Fixed height */
   display: flex;
   align-items: center;
   position: sticky;
@@ -64,28 +65,28 @@ a:hover { text-decoration: underline; }
   gap: 15px;
   text-decoration: none !important;
   
-  /* NEW: 'flex-end' aligns Logo and Text strictly to the bottom */
-  align-items: flex-end; 
+  /* Aligns logo and text side-by-side */
+  align-items: center; 
   
-  /* Pushes the whole group to the bottom of the header */
+  /* PUSHES LOGO GROUP TO THE BOTTOM EDGE */
   align-self: flex-end; 
   
-  /* Touches the green line exactly */
+  /* 0px = Touches the green line exactly. */
   padding-bottom: 0px; 
 }
 
+/* THIS WAS MISSING - CONTROLS LOGO SIZE */
 .brand-logo {
   height: 50px;  /* Normal Size */
   width: auto;
   padding: 0;
-  display: block; 
-  /* Remove any background color here if present */
+  display: block; /* Ensures it behaves correctly */
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  padding-bottom: 0; /* Updated: 0 padding so it touches the bottom */
+  padding-bottom: 8px; /* Lifts text slightly so it aligns with logo center */
 }
 
 .brand-title {
@@ -93,18 +94,13 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1; /* Tighten line height */
-  
-  /* GAP REQUIREMENT: 5px space between Title and Subtitle */
-  margin-bottom: 5px; 
+  line-height: 1.1;
 }
 
 .brand-subtitle {
   font-size: 13px;
   font-weight: 400;
   color: rgba(255,255,255,0.9);
-  line-height: 1; /* Tighten line height so it touches bottom */
-  display: block;
 }
 
 /* Desktop Navigation */
@@ -138,10 +134,7 @@ a:hover { text-decoration: underline; }
 /* Mobile Nav (Hidden by default) */
 .mobile-nav {
   position: fixed;
-  
-  /* FIXED: Changed from 80px to 60px to match new Header Height */
-  top: 60px; 
-  
+  top: 80px;
   left: 0;
   width: 100%;
   background: var(--hsw-green);
@@ -285,12 +278,10 @@ form input, form select, form textarea {
   
   .topbar { padding: 0 15px; }
   
-  /* Fits well in 60px header */
-  .brand-logo { height: 40px; } 
+  .brand-logo { height: 40px; }
   
   .brand-title { 
-    font-size: 15px;
-    margin-bottom: 5px; /* Keep the gap in mobile too */
+    font-size: 15px; 
   }
   
   /* Subtitle NOW VISIBLE on Mobile */
@@ -298,6 +289,7 @@ form input, form select, form textarea {
     display: block !important; 
     font-size: 11px;
     opacity: 0.9;
+    margin-top: 2px;
   }
   
   .footer-inner { grid-template-columns: 1fr; gap: 30px; }

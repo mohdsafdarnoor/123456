@@ -64,7 +64,7 @@
   <div class="mobile-nav">
     <a class="nav-link" href="./index.html">Home</a>
     <a class="nav-link active" href="./tools.html">AI Tools</a>
-    <a class="nav-link" href="./prompts.html">AI Prompts</a>
+    <a class="nav-link active" href="./prompts.html">AI Prompts</a>
     <a class="nav-link" href="./guidelines.html">Guidelines</a>
     <a class="nav-link" href="./about.html">About Us</a>
     <a class="nav-link" href="./contact.html">Contact</a>
@@ -83,10 +83,20 @@
       <div class="accordion-item">
         <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
-          <div class="prompt-box" id="p1">
+          <p><strong>Use this to find roles fitting your profile:</strong></p>
+          <div class="prompt-box" id="ws1">
 I am a Master's student in [Major] at a German university looking for a Werkstudent job. 
-List 10 job titles I should search for that value my skills in [Skill 1, Skill 2] but don't require C1 German.
-            <button class="copy-btn" onclick="copyToClipboard('p1')">Copy</button>
+My profile:
+- Degree: [Degree Name]
+- Key Skills: [Skill 1, Skill 2]
+- Languages: [German Level], [English Level]
+- Availability: [Hours] per week
+
+Tasks:
+1. Suggest 10 realistic Werkstudent job titles I should search for.
+2. Explain which roles are typically open to international students with my language level.
+3. List 5 companies in [City/Region] known for hiring student workers.
+            <button class="copy-btn" onclick="copyToClipboard('ws1')">Copy</button>
           </div>
         </div>
       </div>
@@ -94,10 +104,18 @@ List 10 job titles I should search for that value my skills in [Skill 1, Skill 2
       <div class="accordion-item">
         <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
-          <div class="prompt-box" id="p2">
-Act as a German recruiter. Rewrite my CV summary to highlight my "academic projects" since I have no work experience. 
-Focus on: Reliability, English fluency, and Technical skills.
-            <button class="copy-btn" onclick="copyToClipboard('p2')">Copy</button>
+          <p><strong>Use this to rewrite your CV for academic strength:</strong></p>
+          <div class="prompt-box" id="ws2">
+Act as a German recruiter. I am applying for a Werkstudent position in [Field].
+I have limited work experience, but I have these academic projects:
+- [Project 1 Name & Description]
+- [Project 2 Name & Description]
+
+Tasks:
+1. Rewrite my CV summary to highlight my "academic strengths" and "transferable skills".
+2. Position me as "reliable", "structured", and "eager to learn".
+3. Draft a short, professional email (in German) to HR expressing interest in the role.
+            <button class="copy-btn" onclick="copyToClipboard('ws2')">Copy</button>
           </div>
         </div>
       </div>
@@ -105,9 +123,16 @@ Focus on: Reliability, English fluency, and Technical skills.
       <div class="accordion-item">
         <div class="accordion-header">3. Interview</div>
         <div class="accordion-content">
-          <div class="prompt-box" id="p3">
-I have an interview for a [Role] at [Company]. Ask me one common behavioral question in German, then critique my answer.
-            <button class="copy-btn" onclick="copyToClipboard('p3')">Copy</button>
+          <p><strong>Use this to prepare for "No Experience" questions:</strong></p>
+          <div class="prompt-box" id="ws3">
+I have an interview for a [Role]. 
+Please prepare strong answers to the question: "You don't have much practical experience. Why should we hire you?"
+
+Focus on:
+- My quick learning ability (provide an example based on [Skill])
+- My theoretical foundation from university
+- My reliability and flexibility as a student
+            <button class="copy-btn" onclick="copyToClipboard('ws3')">Copy</button>
           </div>
         </div>
       </div>
@@ -115,13 +140,17 @@ I have an interview for a [Role] at [Company]. Ask me one common behavioral ques
       <div class="accordion-item">
         <div class="accordion-header">4. Onboarding</div>
         <div class="accordion-content">
-          <div class="prompt-box" id="p4">
-Draft a polite email to my manager asking for feedback on my first week tasks. Keep it professional but friendly (German).
-            <button class="copy-btn" onclick="copyToClipboard('p4')">Copy</button>
+          <p><strong>Use this to communicate professionally:</strong></p>
+          <div class="prompt-box" id="ws4">
+Draft a polite email to my manager (in German).
+Context: I need to adjust my working hours next week due to an exam at university.
+Tone: Professional, apologetic but clear, and offering a solution (making up hours later).
+            <button class="copy-btn" onclick="copyToClipboard('ws4')">Copy</button>
           </div>
         </div>
       </div>
     </div>
+
 
     <!-- 2. INTERNSHIP -->
     <div class="card">
@@ -130,9 +159,14 @@ Draft a polite email to my manager asking for feedback on my first week tasks. K
       <div class="accordion-item">
         <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
-          <div class="prompt-box" id="p5">
-What are the top 5 German cities for internships in [Industry]? Include average cost of living vs stipend.
-            <button class="copy-btn" onclick="copyToClipboard('p5')">Copy</button>
+          <p><strong>Use this to identify Mandatory vs. Voluntary roles:</strong></p>
+          <div class="prompt-box" id="int1">
+I need to find a Mandatory Internship (Pflichtpraktikum) for my degree in [Field].
+Tasks:
+1. Suggest 5-7 suitable roles aligned with my profile: [List Skills].
+2. Identify internships in [Industry] where German is not a strict requirement (English speaking).
+3. Explain the key differences in application strategy for a Mandatory vs. Voluntary internship in Germany.
+            <button class="copy-btn" onclick="copyToClipboard('int1')">Copy</button>
           </div>
         </div>
       </div>
@@ -140,14 +174,188 @@ What are the top 5 German cities for internships in [Industry]? Include average 
       <div class="accordion-item">
         <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
-          <div class="prompt-box" id="p6">
-Write a cover letter for a mandatory internship (Pflichtpraktikum). Emphasize that I am exempt from minimum wage and available for 6 months.
-            <button class="copy-btn" onclick="copyToClipboard('p6')">Copy</button>
+          <p><strong>Use this to optimize for ATS systems:</strong></p>
+          <div class="prompt-box" id="int2">
+Here is my current CV: [Paste Text]
+Here is the job description for the internship: [Paste Text]
+
+Tasks:
+1. Identify missing keywords relevant to this specific role.
+2. Flag any unclear job titles or descriptions that a German recruiter might misunderstand.
+3. Rewrite my "Education" section to better match the requirements.
+4. Draft a German-style cover letter (Anschreiben) emphasizing my motivation.
+            <button class="copy-btn" onclick="copyToClipboard('int2')">Copy</button>
           </div>
         </div>
       </div>
       
-      <!-- Add Phases 3 & 4 similarly if needed -->
+      <div class="accordion-item">
+        <div class="accordion-header">3. Interview</div>
+        <div class="accordion-content">
+          <p><strong>Use this to practice cultural fit:</strong></p>
+          <div class="prompt-box" id="int3">
+I have an interview for an internship at a [Startup/Corporate]. 
+Tasks:
+1. List 5 common German interview questions for internship candidates.
+2. Help me answer questions about my "German language level" confidently without lying.
+3. Conduct a mock interview with me: Ask one question, wait for my answer, then critique it.
+            <button class="copy-btn" onclick="copyToClipboard('int3')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">4. Onboarding</div>
+        <div class="accordion-content">
+          <p><strong>Use this to clarify legal status:</strong></p>
+          <div class="prompt-box" id="int4">
+I need to explain to my employer that this is a Mandatory Internship (Pflichtpraktikum).
+Draft an email attaching my university certificate.
+Key points:
+- The internship is required for my degree.
+- It lasts for [Number] months.
+- Confirming that I am exempt from social security contributions for this period.
+            <button class="copy-btn" onclick="copyToClipboard('int4')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 3. MASTER THESIS -->
+    <div class="card">
+      <h2>📖 Master Thesis</h2>
+      
+      <div class="accordion-item">
+        <div class="accordion-header">1. Orientation</div>
+        <div class="accordion-content">
+          <p><strong>Use this to find company partners:</strong></p>
+          <div class="prompt-box" id="mt1">
+I want to write my Master's thesis with a company in [Industry].
+My specialization is [Specialization].
+Tasks:
+1. Identify types of companies in Germany (Startups, SMEs, DAX) open to thesis collaborations in this field.
+2. Propose 3 specific, business-relevant thesis topics that would solve real problems for companies in this sector.
+3. List platforms or strategies to find these specific opportunities.
+            <button class="copy-btn" onclick="copyToClipboard('mt1')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">2. Application</div>
+        <div class="accordion-content">
+          <p><strong>Use this to pitch your topic:</strong></p>
+          <div class="prompt-box" id="mt2">
+Draft a cold email to a Head of Department at [Company] proposing a thesis collaboration.
+Topic Idea: [Topic]
+My Value: [Why this helps them]
+
+Tasks:
+1. Frame the thesis as a "business solution", not an academic burden.
+2. Address potential concerns about time commitment and supervision effort.
+3. Keep it professional, concise, and persuasive (in German or English).
+            <button class="copy-btn" onclick="copyToClipboard('mt2')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">3. Interview</div>
+        <div class="accordion-content">
+          <p><strong>Use this to negotiate terms:</strong></p>
+          <div class="prompt-box" id="mt3">
+I have a meeting to discuss a potential thesis collaboration.
+Please help me prepare for these questions:
+1. "How much time will our team need to spend supervising you?"
+2. "What happens to the data/IP you generate?" (NDA concerns)
+3. "How do you balance working for us vs. writing the thesis?"
+Provide strong, reassuring answers.
+            <button class="copy-btn" onclick="copyToClipboard('mt3')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">4. Onboarding</div>
+        <div class="accordion-content">
+          <p><strong>Use this to manage expectations:</strong></p>
+          <div class="prompt-box" id="mt4">
+I am starting my thesis at [Company]. 
+Tasks:
+1. Create a communication plan to keep my university supervisor and company supervisor aligned.
+2. Draft a template for a "Weekly Progress Update" email to send to my company mentor.
+3. Advise on how to handle situations where the company asks for operational work that distracts from the thesis.
+            <button class="copy-btn" onclick="copyToClipboard('mt4')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 4. FULL-TIME JOB -->
+    <div class="card">
+      <h2>🚀 Full-Time Employment</h2>
+      
+      <div class="accordion-item">
+        <div class="accordion-header">1. Orientation</div>
+        <div class="accordion-content">
+          <p><strong>Use this to target the right roles:</strong></p>
+          <div class="prompt-box" id="ft1">
+I am graduating with a Master's in [Degree]. I have experience in [Experience].
+Tasks:
+1. Suggest 5 specific job titles I should target in Germany for a full-time entry-level role.
+2. Identify transferable skills from my studies/internships relevant to these roles.
+3. List the top 3 cities in Germany with the highest demand for this profile.
+            <button class="copy-btn" onclick="copyToClipboard('ft1')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">2. Application</div>
+        <div class="accordion-content">
+          <p><strong>Use this to professionalize your CV:</strong></p>
+          <div class="prompt-box" id="ft2">
+Rewrite my CV to position me as "Job-Ready" for a full-time [Role].
+Current Weakness: [Describe weakness, e.g., only internships].
+Tasks:
+1. Rewrite bullet points to focus on "Impact" and "Results" (use numbers/metrics).
+2. Optimize for German ATS systems (keywords: [List Keywords]).
+3. Draft a cover letter explaining why I am looking to stay in Germany long-term.
+            <button class="copy-btn" onclick="copyToClipboard('ft2')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">3. Interview</div>
+        <div class="accordion-content">
+          <p><strong>Use this for behavioral prep:</strong></p>
+          <div class="prompt-box" id="ft3">
+Act as a hiring manager for a [Role].
+Conduct a behavioral interview using the STAR method (Situation, Task, Action, Result).
+Ask me: "Tell me about a time you faced a conflict at work."
+Critique my answer for: Structure, Clarity, and German cultural fit.
+            <button class="copy-btn" onclick="copyToClipboard('ft3')">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">4. Onboarding</div>
+        <div class="accordion-content">
+          <p><strong>Use this for your first 90 days:</strong></p>
+          <div class="prompt-box" id="ft4">
+I just started my first full-time job in Germany as a [Role].
+Tasks:
+1. Create a 30-60-90 day plan to impress my manager.
+2. Explain the typical performance expectations for new hires in Germany.
+3. Outline cultural "Do's and Don'ts" for building trust with German colleagues in the first month.
+            <button class="copy-btn" onclick="copyToClipboard('ft4')">Copy</button>
+          </div>
+        </div>
+      </div>
     </div>
 
   </main>

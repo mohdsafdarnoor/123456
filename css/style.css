@@ -253,7 +253,7 @@ form input, form select, form textarea {
   font-family: inherit;
 }
 
-/* 9. RESPONSIVE */
+/* 9. RESPONSIVE (Mobile Styles) */
 @media (max-width: 768px) {
   .nav { display: none; } /* Hide desktop nav */
   .hamburger { display: block; } /* Show hamburger */
@@ -261,7 +261,15 @@ form input, form select, form textarea {
   .topbar { padding: 0 15px; }
   .brand-logo { height: 40px; }
   .brand-title { font-size: 15px; }
-  .brand-subtitle { display: none; } /* Save space on mobile */
+
+  /* THIS IS THE FIX: Changed 'none' to 'block' */
+  .brand-subtitle { 
+    display: block !important; 
+    font-size: 11px; 
+    opacity: 0.9;
+    margin-top: 2px; /* Adds a tiny space between title and text */
+  }
   
   .footer-inner { grid-template-columns: 1fr; gap: 30px; }
 }
+

@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | AI Job Search Support | Hochschule Wismar</title>
-  <meta name="description" content="Get in touch with the student team behind the AI Job Search Support platform." />
+  <title>Contact | AI Job Search Support | Hochschule Wismar</title>
   
-  <!-- CORRECT CSS PATH -->
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
@@ -14,45 +12,51 @@
   <!-- HEADER -->
   <header class="topbar">
     <div class="topbar-inner">
-      <div>
-        <span class="brand-title">Hochschule Wismar</span>
-        <span class="brand-subtitle">Business Faculty</span>
-      </div>
+      <a href="./index.html" class="brand">
+        <img src="./assets/logo.png" alt="HS Wismar Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">Hochschule Wismar</span>
+          <span class="brand-subtitle">University of Applied Sciences</span>
+        </div>
+      </a>
+
       <nav class="nav">
         <a class="nav-link" href="./index.html">Home</a>
         <a class="nav-link" href="./tools.html">AI Tools</a>
         <a class="nav-link" href="./prompts.html">AI Prompts</a>
         <a class="nav-link" href="./guidelines.html">Guidelines</a>
-        <a class="nav-link" href="./faqs.html">FAQs</a>
+        <a class="nav-link" href="./about.html">About Us</a>
         <a class="nav-link active" href="./contact.html">Contact</a>
       </nav>
+
+      <div class="hamburger">☰</div>
     </div>
   </header>
 
+  <div class="mobile-nav">
+    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./tools.html">AI Tools</a>
+    <a class="nav-link" href="./prompts.html">AI Prompts</a>
+    <a class="nav-link" href="./guidelines.html">Guidelines</a>
+    <a class="nav-link" href="./about.html">About Us</a>
+    <a class="nav-link active" href="./contact.html">Contact</a>
+  </div>
+
   <main class="page">
-    
-    <!-- HERO -->
     <section class="hero">
       <h1>Contact Us</h1>
-      <p>Have suggestions for new tools, found a bug, or want to contribute? Send us a message.</p>
+      <p>Have suggestions or found a bug? Send us a message.</p>
     </section>
 
     <div class="grid-2">
       
-      <!-- CONTACT FORM -->
+      <!-- FORM -->
       <div class="card">
         <h2>📩 Send a Message</h2>
-        <p>We usually reply within 24-48 hours.</p>
-        
-        <!-- Web3Forms API Form -->
         <form action="https://api.web3forms.com/submit" method="POST">
-          
-          <!-- Replace this value with your actual Access Key from Web3Forms -->
+          <!-- Replace value with your actual Web3Forms Access Key -->
           <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE" />
           
-          <!-- Optional: Spam Protection (Honeypot) -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
           <div>
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required placeholder="Your Name" />
@@ -64,59 +68,49 @@
           </div>
 
           <div>
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject" required>
-              <option value="" disabled selected>Select a topic...</option>
-              <option value="General Inquiry">General Inquiry</option>
-              <option value="Tool Suggestion">Suggest a New AI Tool</option>
-              <option value="Bug Report">Report a Website Bug</option>
-              <option value="Feedback">Feedback on Guides/Prompts</option>
-            </select>
-          </div>
-
-          <div>
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
           </div>
 
           <button type="submit" class="btn btn-green">Send Message</button>
         </form>
       </div>
 
-      <!-- CONTACT INFO / SIDEBAR -->
+      <!-- INFO -->
       <div>
         <div class="card">
           <h2>📍 Location</h2>
-          <p><strong>Hochschule Wismar</strong><br>
-          University of Applied Sciences: Technology, Business and Design<br>
-          Philipp-Müller-Straße 14<br>
-          23966 Wismar, Germany</p>
+          <p>Hochschule Wismar<br>Philipp-Müller-Straße 14<br>23966 Wismar</p>
         </div>
-
         <div class="card">
-          <h2>👥 Project Team</h2>
-          <p>This platform is a student initiative from the <strong>Master International Management</strong> program.</p>
-          <p><strong>Faculty:</strong> Business (Wirtschaftswissenschaften)</p>
-          <p><strong>Email:</strong> <a href="mailto:support@ai-job-wismar.de">support@ai-job-wismar.de</a></p>
-        </div>
-
-        <div class="card" style="background-color: #e8f5e9; border-left-color: var(--hsw-green);">
-          <h3>💡 Contribute?</h3>
-          <p>Are you a student with experience in AI tools or web development? We are looking for contributors to maintain this platform next semester.</p>
-          <a href="#" class="tool-link">Join the Team →</a>
+          <h2>👥 Team</h2>
+          <p>Project by Master International Management Students.</p>
+          <p>Email: <a href="mailto:support@ai-job-wismar.de">support@ai-job-wismar.de</a></p>
         </div>
       </div>
 
     </div>
-
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Hochschule Wismar. University of Applied Sciences: Technology, Business and Design.</p>
+    <div class="footer-inner">
+      <div>
+        <h3>Kontakt</h3>
+        <p>Hochschule Wismar<br>Philipp-Müller-Straße 14<br>23966 Wismar</p>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li></ul>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul><li><a href="#">LSF Portal</a></li><li><a href="#">Stud.IP</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Hochschule Wismar.</p></div>
   </footer>
 
-  <!-- CORRECT JS PATH -->
   <script src="./js/main.js"></script>
 </body>
 </html>

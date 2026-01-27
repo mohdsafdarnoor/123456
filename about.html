@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | AI Job Search Support | Hochschule Wismar</title>
-  <meta name="description" content="Learn about the student team behind the AI Job Search Support platform." />
   
-  <!-- CORRECT CSS PATH -->
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
@@ -14,98 +12,110 @@
   <!-- HEADER -->
   <header class="topbar">
     <div class="topbar-inner">
-      <div>
-        <span class="brand-title">Hochschule Wismar</span>
-        <span class="brand-subtitle">Business Faculty</span>
-      </div>
+      <a href="./index.html" class="brand">
+        <img src="./assets/logo.png" alt="HS Wismar Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">Hochschule Wismar</span>
+          <span class="brand-subtitle">University of Applied Sciences</span>
+        </div>
+      </a>
+
       <nav class="nav">
         <a class="nav-link" href="./index.html">Home</a>
         <a class="nav-link" href="./tools.html">AI Tools</a>
         <a class="nav-link" href="./prompts.html">AI Prompts</a>
         <a class="nav-link" href="./guidelines.html">Guidelines</a>
-        <a class="nav-link" href="./about.html">About Us</a> <!-- Added Link -->
+        <a class="nav-link active" href="./about.html">About Us</a>
         <a class="nav-link" href="./contact.html">Contact</a>
       </nav>
+
+      <div class="hamburger">☰</div>
     </div>
   </header>
 
+  <div class="mobile-nav">
+    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./tools.html">AI Tools</a>
+    <a class="nav-link" href="./prompts.html">AI Prompts</a>
+    <a class="nav-link" href="./guidelines.html">Guidelines</a>
+    <a class="nav-link active" href="./about.html">About Us</a>
+    <a class="nav-link" href="./contact.html">Contact</a>
+  </div>
+
   <main class="page">
-    
-    <!-- HERO -->
     <section class="hero">
       <h1>About the Project</h1>
-      <p>A student-led initiative to bridge the gap between international talent and the German job market using Artificial Intelligence.</p>
+      <p>Bridging the gap between international talent and the German job market using AI.</p>
     </section>
 
     <div class="grid-2">
-      
       <!-- MISSION -->
       <div class="card">
         <h2>🎯 Our Mission</h2>
-        <p>International students often face significant hurdles when entering the German job market:</p>
+        <p>International students often face significant hurdles:</p>
         <ul>
-          <li><strong>Language Barriers:</strong> Professional German is hard to master quickly.</li>
-          <li><strong>Cultural Norms:</strong> German CVs and interviews have specific rules.</li>
-          <li><strong>Complex Bureaucracy:</strong> Visas, taxes, and insurance can be overwhelming.</li>
+          <li><strong>Language Barriers:</strong> Professional German is hard.</li>
+          <li><strong>Cultural Norms:</strong> German CVs have specific rules.</li>
         </ul>
-        <p>Our mission is to <strong>democratize career access</strong> by providing free, high-quality AI tools and guides that act as a 24/7 career counselor for every student at Hochschule Wismar.</p>
+        <p>We aim to democratize career access by providing free, high-quality AI tools and guides acting as a 24/7 career counselor.</p>
       </div>
 
-      <!-- ORIGIN STORY -->
+      <!-- ORIGIN -->
       <div class="card">
         <h2>💡 Why We Built This</h2>
-        <p>This platform began as a semester project in the <strong>Master International Management</strong> program.</p>
-        <p>We realized that while many students use ChatGPT, few use it <em>effectively</em> for job applications. Generic prompts often lead to generic results that recruiters ignore.</p>
-        <p>We spent months testing hundreds of prompts and tools to curate only the ones that actually work for the German market. The result is this centralized hub for career acceleration.</p>
+        <p>This platform is a semester project from the <strong>Master International Management</strong> program.</p>
+        <p>We realized that while students use ChatGPT, few use it effectively. We tested hundreds of prompts to curate only the ones that work for German recruiters.</p>
       </div>
-
     </div>
 
-    <!-- THE TEAM -->
+    <!-- TEAM -->
     <section style="margin-top: 40px;">
-      <h2 class="text-center" style="margin-bottom: 30px;">Meet the Team</h2>
-      
+      <h2 style="text-align:center; margin-bottom:30px;">Meet the Team</h2>
       <div class="grid-3">
-        <!-- Member 1 -->
-        <div class="card text-center">
-          <div style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #666;">IMG</div>
-          <h3 style="margin-bottom: 5px;">Your Name</h3>
-          <p style="font-size: 14px; color: var(--hsw-green);">Project Lead & Developer</p>
-          <p style="font-size: 14px;">Master International Management student passionate about AI and Web Development.</p>
+        <div class="card" style="text-align:center;">
+          <h3>Your Name</h3>
+          <p style="color:var(--hsw-green); font-weight:bold;">Project Lead</p>
+          <p>Master Student, International Management</p>
         </div>
-
-        <!-- Member 2 (Placeholder) -->
-        <div class="card text-center">
-          <div style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #666;">IMG</div>
-          <h3 style="margin-bottom: 5px;">Team Member</h3>
-          <p style="font-size: 14px; color: var(--hsw-green);">Content Researcher</p>
-          <p style="font-size: 14px;">Curated the AI tools and tested prompts against German recruiter standards.</p>
+        <div class="card" style="text-align:center;">
+          <h3>Team Member</h3>
+          <p style="color:var(--hsw-green); font-weight:bold;">Content Research</p>
+          <p>Master Student, International Management</p>
         </div>
-
-        <!-- Member 3 (Placeholder) -->
-        <div class="card text-center">
-          <div style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #666;">IMG</div>
-          <h3 style="margin-bottom: 5px;">Team Member</h3>
-          <p style="font-size: 14px; color: var(--hsw-green);">UX Designer</p>
-          <p style="font-size: 14px;">Designed the user experience to match Hochschule Wismar's corporate identity.</p>
+        <div class="card" style="text-align:center;">
+          <h3>Team Member</h3>
+          <p style="color:var(--hsw-green); font-weight:bold;">UX Design</p>
+          <p>Master Student, International Management</p>
         </div>
       </div>
     </section>
 
     <!-- DISCLAIMER -->
-    <div class="card" style="margin-top: 40px; background-color: #f8f9fa; border-left-color: #999;">
+    <div class="card" style="margin-top: 40px; background:#f8f9fa;">
       <h3>⚖️ Disclaimer</h3>
-      <p style="font-size: 14px;">This website is a student project and is not officially operated by the administration of Hochschule Wismar. While we strive for accuracy, please always verify legal information (visas, taxes) with official sources like the International Office or government authorities.</p>
+      <p style="font-size: 14px;">This website is a student project and not officially operated by the university administration. Please verify legal info with the International Office.</p>
     </div>
-
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Hochschule Wismar. University of Applied Sciences: Technology, Business and Design.</p>
+    <div class="footer-inner">
+      <div>
+        <h3>Kontakt</h3>
+        <p>Hochschule Wismar<br>Philipp-Müller-Straße 14<br>23966 Wismar</p>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li></ul>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul><li><a href="#">LSF Portal</a></li><li><a href="#">Stud.IP</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Hochschule Wismar.</p></div>
   </footer>
 
-  <!-- CORRECT JS PATH -->
   <script src="./js/main.js"></script>
 </body>
 </html>

@@ -61,7 +61,7 @@ a:hover { text-decoration: underline; }
   text-decoration: none !important;
   
   /* MOVED DOWN SLIGHTLY (User Request) */
-  padding-top: 8px; 
+  padding-top: 12px; 
 }
 
 .brand-logo {

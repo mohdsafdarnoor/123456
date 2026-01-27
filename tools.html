@@ -3,10 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Tools Directory | AI Job Search Support | Hochschule Wismar</title>
-  <meta name="description" content="Curated AI tools for job search, CV writing, and interview prep for students." />
-  
-  <!-- CORRECT CSS PATH -->
+  <title>AI Tools | HS Wismar</title>
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
@@ -14,216 +11,195 @@
   <!-- HEADER -->
   <header class="topbar">
     <div class="topbar-inner">
-      <div>
-        <span class="brand-title">Hochschule Wismar</span>
-        <span class="brand-subtitle">Business Faculty</span>
-      </div>
+      <!-- Logo Section -->
+      <a href="./index.html" class="brand">
+        <!-- Make sure you have this image in assets folder -->
+        <img src="./assets/logo.png" alt="HS Wismar Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">Hochschule Wismar</span>
+          <span class="brand-subtitle">University of Applied Sciences</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
       <nav class="nav">
         <a class="nav-link" href="./index.html">Home</a>
         <a class="nav-link active" href="./tools.html">AI Tools</a>
         <a class="nav-link" href="./prompts.html">AI Prompts</a>
         <a class="nav-link" href="./guidelines.html">Guidelines</a>
-        <a class="nav-link" href="./faqs.html">FAQs</a>
         <a class="nav-link" href="./contact.html">Contact</a>
       </nav>
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger">☰</div>
     </div>
   </header>
 
+  <!-- Mobile Nav Menu -->
+  <div class="mobile-nav">
+    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link active" href="./tools.html">AI Tools</a>
+    <a class="nav-link" href="./prompts.html">AI Prompts</a>
+    <a class="nav-link" href="./guidelines.html">Guidelines</a>
+    <a class="nav-link" href="./contact.html">Contact</a>
+  </div>
+
   <main class="page">
-    
-    <!-- HERO -->
     <section class="hero">
       <h1>AI Tools Directory</h1>
-      <p>Select your career stage below to find recommended AI tools for every step of your application journey.</p>
+      <p>Categorized by career stage and application phase.</p>
     </section>
 
-    <!-- 1. WORKING STUDENT (WERKSTUDENT) -->
+    <!-- 1. WORKING STUDENT -->
     <div class="card" id="working-student">
       <h2>🎓 Working Student (Werkstudent)</h2>
-      <p>Tools for finding flexible part-time jobs compatible with your studies.</p>
       
-      <!-- Phase 1: Orientation -->
       <div class="accordion-item">
-        <div class="accordion-header">1. Orientation (Finding Jobs)</div>
+        <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
-          <p>Tools to identify opportunities and match your skills.</p>
           <ul>
-            <li><a href="https://www.linkedin.com/jobs/career-explorer" target="_blank" class="tool-link">LinkedIn Career Explorer</a> – Identify skill gaps and role matches.</li>
-            <li><a href="https://www.jobmensa.de/" target="_blank" class="tool-link">JobMensa</a> – Germany's largest student job portal.</li>
-            <li><a href="https://www.stepstone.de/" target="_blank" class="tool-link">StepStone</a> – Filter for "Teilzeit" or "Werkstudent".</li>
-            <li><a href="https://de.indeed.com/" target="_blank" class="tool-link">Indeed</a> – Broad search for local student jobs.</li>
+            <li><a href="https://www.jobmensa.de/" target="_blank">JobMensa</a> - Student jobs.</li>
+            <li><a href="https://www.linkedin.com/jobs/" target="_blank">LinkedIn Jobs</a> - Filter by "Werkstudent".</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 2: Application -->
       <div class="accordion-item">
-        <div class="accordion-header">2. Application (CV & Cover Letter)</div>
+        <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
-          <p>Create professional application documents quickly.</p>
           <ul>
-            <li><a href="https://www.canva.com/resumes/templates/" target="_blank" class="tool-link">Canva Resumes</a> – Clean, visual templates for students.</li>
-            <li><a href="https://resume.io/" target="_blank" class="tool-link">Resume.io</a> – ATS-friendly resume builder.</li>
-            <li><a href="https://simplify.jobs/" target="_blank" class="tool-link">Simplify</a> – Auto-fill job applications to save time.</li>
-            <li><a href="https://www.deepl.com/" target="_blank" class="tool-link">DeepL</a> – Essential for translating CVs into German.</li>
+            <li><a href="https://resume.io/" target="_blank">Resume.io</a> - CV Builder.</li>
+            <li><a href="https://www.deepl.com/" target="_blank">DeepL</a> - German translation.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 3: Interview -->
       <div class="accordion-item">
-        <div class="accordion-header">3. Interview Preparation</div>
+        <div class="accordion-header">3. Interview</div>
         <div class="accordion-content">
-          <p>Practice common questions for student roles.</p>
           <ul>
-            <li><a href="https://grow.google/certificates/interview-warmup/" target="_blank" class="tool-link">Google Interview Warmup</a> – Practice basic answers.</li>
-            <li><a href="https://yoodli.ai/" target="_blank" class="tool-link">Yoodli</a> – AI speech coach for confidence.</li>
+            <li><a href="https://grow.google/certificates/interview-warmup/" target="_blank">Google Interview Warmup</a>.</li>
           </ul>
         </div>
       </div>
-      
-      <!-- Phase 4: Onboarding -->
       <div class="accordion-item">
-        <div class="accordion-header">4. Onboarding & Daily Work</div>
+        <div class="accordion-header">4. Onboarding</div>
         <div class="accordion-content">
-          <p>Tools to help you succeed in your first weeks.</p>
           <ul>
-            <li><a href="https://chatgpt.com/" target="_blank" class="tool-link">ChatGPT</a> – Draft professional emails to colleagues.</li>
-            <li><a href="https://www.deepl.com/write" target="_blank" class="tool-link">DeepL Write</a> – Correct grammar in your German emails.</li>
+            <li><a href="https://chatgpt.com/" target="_blank">ChatGPT</a> - Work emails.</li>
           </ul>
         </div>
       </div>
     </div>
 
-
-    <!-- 2. INTERNSHIP (PRAKTIKUM) -->
+    <!-- 2. INTERNSHIP -->
     <div class="card" id="internship">
       <h2>💼 Internship (Praktikum)</h2>
-      <p>Tools for securing mandatory or voluntary internships in Germany.</p>
       
-      <!-- Phase 1 -->
       <div class="accordion-item">
         <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://www.meinpraktikum.de/" target="_blank" class="tool-link">MeinPraktikum.de</a> – Dedicated German internship portal with reviews.</li>
-            <li><a href="https://joinhandshake.com/" target="_blank" class="tool-link">Handshake</a> – Student-focused network for early talent.</li>
-            <li><a href="https://www.linkedin.com/jobs/" target="_blank" class="tool-link">LinkedIn Jobs</a> – Use the "Internship" filter.</li>
+            <li><a href="https://www.meinpraktikum.de/" target="_blank">MeinPraktikum.de</a>.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 2 -->
       <div class="accordion-item">
         <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://www.vmock.com/" target="_blank" class="tool-link">VMock</a> – AI resume scoring (Academic focus).</li>
-            <li><a href="https://chatgpt.com/" target="_blank" class="tool-link">ChatGPT</a> – Generate cover letter drafts tailored to the company.</li>
-            <li><a href="https://europa.eu/europass/en" target="_blank" class="tool-link">Europass</a> – Standard European CV format (safe choice).</li>
+            <li><a href="https://europa.eu/europass/" target="_blank">Europass CV</a>.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 3 -->
       <div class="accordion-item">
         <div class="accordion-header">3. Interview</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://interviewlift.com/" target="_blank" class="tool-link">Interview Lift</a> – Mock interviews for specific roles.</li>
-            <li><a href="https://speech.microsoft.com/" target="_blank" class="tool-link">Microsoft Speaker Coach</a> – Improve presentation skills.</li>
+            <li><a href="https://interviewlift.com/" target="_blank">Interview Lift</a>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">4. Onboarding</div>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="https://www.deepl.com/write" target="_blank">DeepL Write</a>.</li>
           </ul>
         </div>
       </div>
     </div>
 
-
-    <!-- 3. MASTER THESIS -->
+    <!-- 3. THESIS -->
     <div class="card" id="thesis">
-      <h2>📖 Master Thesis (Company Collaboration)</h2>
-      <p>Find industrial partners and manage your research project.</p>
+      <h2>📖 Master Thesis</h2>
       
-      <!-- Phase 1 -->
       <div class="accordion-item">
-        <div class="accordion-header">1. Orientation (Finding Partners)</div>
+        <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://thesisforyou.com/" target="_blank" class="tool-link">ThesisForYou</a> – Marketplace for thesis topics in companies.</li>
-            <li><a href="https://excelerate.dk/" target="_blank" class="tool-link">Excelerate</a> – Connects students with companies for projects.</li>
-            <li><a href="https://scholar.google.com/" target="_blank" class="tool-link">Google Scholar</a> – Find academic papers and potential topics.</li>
+            <li><a href="https://thesisforyou.com/" target="_blank">ThesisForYou</a>.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 2 -->
       <div class="accordion-item">
-        <div class="accordion-header">2. Application (Proposal)</div>
+        <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://chatgpt.com/" target="_blank" class="tool-link">ChatGPT</a> – Draft research proposals and motivation letters.</li>
-            <li><a href="https://www.deepl.com/" target="_blank" class="tool-link">DeepL</a> – Ensure your proposal is professional German/English.</li>
+            <li><a href="https://chatgpt.com/" target="_blank">ChatGPT</a> (Proposal Drafts).</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 3 -->
       <div class="accordion-item">
-        <div class="accordion-header">3. Interview (Defense/Pitch)</div>
+        <div class="accordion-header">3. Interview</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://www.finalroundai.com/" target="_blank" class="tool-link">Final Round AI</a> – Structure your research pitch.</li>
+            <li><a href="https://www.finalroundai.com/" target="_blank">Final Round AI</a>.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 4 -->
       <div class="accordion-item">
-        <div class="accordion-header">4. Research & Writing</div>
+        <div class="accordion-header">4. Onboarding</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://typeset.io/" target="_blank" class="tool-link">SciSpace (Typeset)</a> – AI to understand research papers.</li>
-            <li><a href="https://www.zotero.org/" target="_blank" class="tool-link">Zotero</a> – Manage your citations and bibliography.</li>
+            <li><a href="https://www.zotero.org/" target="_blank">Zotero</a> (Citations).</li>
           </ul>
         </div>
       </div>
     </div>
 
-
-    <!-- 4. FULL-TIME JOB -->
-    <div class="card" id="fulltime">
-      <h2>🚀 Full-Time Employment</h2>
-      <p>Launch your professional career after graduation.</p>
+    <!-- 4. FULL-TIME -->
+    <div class="card" id="full-time">
+      <h2>🚀 Full-Time Job</h2>
       
-      <!-- Phase 1 -->
       <div class="accordion-item">
         <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://www.xing.com/" target="_blank" class="tool-link">XING</a> – The #1 professional network in DACH (Germany/Austria/Switzerland).</li>
-            <li><a href="https://eures.europa.eu/" target="_blank" class="tool-link">EURES</a> – European Employment Services portal.</li>
-            <li><a href="https://www.jobright.ai/" target="_blank" class="tool-link">Jobright.ai</a> – AI job search assistant.</li>
+            <li><a href="https://www.xing.com/" target="_blank">XING</a>.</li>
+            <li><a href="https://www.stepstone.de/" target="_blank">StepStone</a>.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 2 -->
       <div class="accordion-item">
         <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://www.jobscan.co/" target="_blank" class="tool-link">Jobscan</a> – Optimize resume keywords against job descriptions.</li>
-            <li><a href="https://www.tealhq.com/" target="_blank" class="tool-link">Teal</a> – Career growth platform and application tracker.</li>
+            <li><a href="https://www.jobscan.co/" target="_blank">Jobscan</a>.</li>
           </ul>
         </div>
       </div>
-
-      <!-- Phase 3 -->
       <div class="accordion-item">
         <div class="accordion-header">3. Interview</div>
         <div class="accordion-content">
           <ul>
-            <li><a href="https://prepfully.com/" target="_blank" class="tool-link">Prepfully</a> – Mock interviews with experts from top companies.</li>
-            <li><a href="https://chatgpt.com/" target="_blank" class="tool-link">ChatGPT</a> – Practice salary negotiation scripts.</li>
+            <li><a href="https://prepfully.com/" target="_blank">Prepfully</a>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">4. Onboarding</div>
+        <div class="accordion-content">
+          <ul>
+            <li><a href="https://chatgpt.com/" target="_blank">ChatGPT</a> (Culture Tips).</li>
           </ul>
         </div>
       </div>
@@ -231,12 +207,54 @@
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- REAL UNIVERSITY FOOTER -->
   <footer class="footer">
-    <p>© 2026 Hochschule Wismar. University of Applied Sciences: Technology, Business and Design.</p>
+    <div class="footer-inner">
+      
+      <!-- Column 1: Contact -->
+      <div>
+        <h3>Kontakt</h3>
+        <p>
+          Hochschule Wismar<br>
+          University of Applied Sciences<br>
+          Technology, Business and Design<br><br>
+          Philipp-Müller-Straße 14<br>
+          23966 Wismar
+        </p>
+        <p style="margin-top: 15px;">
+          <a href="mailto:presse@hs-wismar.de">presse@hs-wismar.de</a>
+        </p>
+      </div>
+
+      <!-- Column 2: Information -->
+      <div>
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">Barrierefreiheit</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Lageplan</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Quick Links -->
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://lsf.hs-wismar.de/" target="_blank">LSF Portal</a></li>
+          <li><a href="https://studip.hs-wismar.de/" target="_blank">Stud.IP</a></li>
+          <li><a href="https://ilias.hs-wismar.de/" target="_blank">ILIAS</a></li>
+          <li><a href="https://mensaplan.studierendenwerk-rostock-wismar.de/" target="_blank">Mensa</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Hochschule Wismar. Alle Rechte vorbehalten.</p>
+    </div>
   </footer>
 
-  <!-- CORRECT JS PATH -->
   <script src="./js/main.js"></script>
 </body>
 </html>

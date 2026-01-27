@@ -35,7 +35,7 @@ a:hover { text-decoration: underline; }
   background-color: var(--hsw-green);
   color: var(--white);
   padding: 0 20px;
-  height: 80px; /* Taller for logo */
+  height: 80px;
   display: flex;
   align-items: center;
   position: sticky;
@@ -59,12 +59,16 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: 15px;
   text-decoration: none !important;
+  
+  /* MOVED DOWN SLIGHTLY (User Request) */
+  padding-top: 8px; 
 }
 
 .brand-logo {
-  height: 50px; /* Adjust based on your logo file */
+  height: 50px; 
   width: auto;
-  padding: 0px;
+  /* Removed background: white; so transparency works */
+  padding: 0;
   border-radius: 4px;
 }
 
@@ -126,6 +130,7 @@ a:hover { text-decoration: underline; }
   padding: 20px;
   display: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
 }
 
 .mobile-nav.active { display: flex; }
@@ -184,7 +189,7 @@ a:hover { text-decoration: underline; }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* 6. BUTTONS (ADDED) */
+/* 6. BUTTONS */
 .btn {
   display: inline-block;
   background-color: var(--hsw-anthrazit);
@@ -255,21 +260,24 @@ form input, form select, form textarea {
 
 /* 9. RESPONSIVE (Mobile Styles) */
 @media (max-width: 768px) {
-  .nav { display: block; } /* Show desktop nav */
+  .nav { display: none; } /* Hide desktop nav */
   .hamburger { display: block; } /* Show hamburger */
   
   .topbar { padding: 0 15px; }
+  
   .brand-logo { height: 40px; }
-  .brand-title { font-size: 15px; }
-
-  /* THIS IS THE FIX: Changed 'none' to 'block' */
+  
+  .brand-title { 
+    font-size: 15px; 
+  }
+  
+  /* Subtitle NOW VISIBLE on Mobile */
   .brand-subtitle { 
     display: block !important; 
-    font-size: 11px; 
+    font-size: 11px;
     opacity: 0.9;
-    margin-top: 2px; /* Adds a tiny space between title and text */
+    margin-top: 2px;
   }
   
   .footer-inner { grid-template-columns: 1fr; gap: 30px; }
 }
-

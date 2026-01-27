@@ -1,268 +1,186 @@
-/* ============================================================
-   HOCHSCHULE WISMAR - AI JOB SEARCH SUPPORT
-   Corporate Design Stylesheet (Business Faculty)
-   Updated: 2026
-   ============================================================ */
+// ============================================================
+// HS WISMAR - AI JOB SEARCH SUPPORT
+// Main JavaScript File
+// ============================================================
 
-/* 1. VARIABLES */
-:root {
-  --hsw-green: #339933;       /* Business Faculty Primary */
-  --hsw-anthrazit: #2f3229;   /* Text & Footer */
-  --hsw-hellgrau: #f4f4f4;    /* Background */
-  --hsw-orange: #ff5d00;      /* Accent */
-  --white: #ffffff;
-  --text-muted: #666;
-  --shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+(function () {
+  'use strict';
 
-/* 2. GLOBAL RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Meta', 'Arial', Helvetica, sans-serif;
-  background-color: var(--hsw-hellgrau);
-  color: var(--hsw-anthrazit);
-  font-size: 16px;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-a { color: var(--hsw-green); text-decoration: none; font-weight: 600; }
-a:hover { text-decoration: underline; }
+  // 1. CLICK & INTERACTION FIX (CRITICAL)
+  function enablePageInteractions() {
+    document.documentElement.style.pointerEvents = "auto";
+    document.body.style.pointerEvents = "auto";
 
-/* 3. HEADER (With Logo & Hamburger) */
-.topbar {
-  background-color: var(--hsw-green);
-  color: var(--white);
-  padding: 0 20px;
-  height: 80px; /* Taller for logo */
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
+    // Hide any blocking overlays
+    const blockers = [
+      ".overlay", ".loader", ".loading", ".backdrop", 
+      ".modal-backdrop", "#overlay", "#loading"
+    ];
 
-.topbar-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    blockers.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.display = "none";
+        el.style.pointerEvents = "none";
+      });
+    });
+  }
+  document.addEventListener("DOMContentLoaded", enablePageInteractions);
+  window.addEventListener("load", enablePageInteractions);
 
-/* Logo Section */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-decoration: none !important;
-}
 
-.brand-logo {
-  height: 50px; /* Adjust based on your logo file */
-  width: auto;
-  background: white; /* Optional: if logo is transparent and needs contrast */
-  padding: 2px;
-  border-radius: 4px;
-}
+  // 2. MOBILE HAMBURGER MENU
+  function initMobileMenu() {
+    const hamburger = document.querySelector(".hamburger");
+    const mobileNav = document.querySelector(".mobile-nav");
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener("click", () => {
+        mobileNav.classList.toggle("active");
+        
+        // Toggle icon between Menu (☰) and Close (✕)
+        if (mobileNav.classList.contains("active")) {
+          hamburger.textContent = "✕";
+        } else {
+          hamburger.textContent = "☰";
+        }
+      });
 
-.brand-title {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.1;
-}
+      // Close menu when clicking a link
+      mobileNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileNav.classList.remove("active");
+          hamburger.textContent = "☰";
+        });
+      });
+    }
+  }
+  document.addEventListener("DOMContentLoaded", initMobileMenu);
 
-.brand-subtitle {
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.9);
-}
 
-/* Desktop Navigation */
-.nav {
-  display: flex;
-  gap: 15px;
-}
+  // 3. ACCORDION (One-Open-Logic)
+  function initAccordions() {
+    const headers = document.querySelectorAll(".accordion-header");
+    headers.forEach(header => {
+      // Remove old listeners to prevent duplicates
+      header.removeEventListener("click", toggleAccordion);
+      header.addEventListener("click", toggleAccordion);
+    });
+  }
 
-.nav-link {
-  color: var(--white) !important;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
+  function toggleAccordion(e) {
+    const header = e.currentTarget;
+    const content = header.nextElementSibling;
+    const parent = header.closest(".card");
+    
+    // Close others in same card
+    if (parent) {
+      parent.querySelectorAll(".accordion-content").forEach(c => {
+        if (c !== content) c.classList.remove("active");
+      });
+      parent.querySelectorAll(".accordion-header").forEach(h => {
+        if (h !== header) h.classList.remove("active");
+      });
+    }
 
-.nav-link:hover, .nav-link.active {
-  background: rgba(0,0,0,0.15);
-  text-decoration: none !important;
-}
+    // Toggle current
+    header.classList.toggle("active");
+    content.classList.toggle("active");
+  }
+  document.addEventListener("DOMContentLoaded", initAccordions);
 
-/* Hamburger Menu (Hidden on Desktop) */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
 
-/* Mobile Nav (Hidden by default) */
-.mobile-nav {
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  background: var(--hsw-green);
-  flex-direction: column;
-  padding: 20px;
-  display: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+  // 4. ACTIVE NAV LINK
+  function highlightActiveLink() {
+    const path = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-link").forEach(link => {
+      // Clean up href (remove ./ and query params)
+      const href = link.getAttribute("href").split("?")[0].replace("./", "");
+      
+      link.classList.remove("active");
+      if (href === path || (path === "" && href === "index.html")) {
+        link.classList.add("active");
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", highlightActiveLink);
 
-.mobile-nav.active { display: flex; }
-.mobile-nav .nav-link { 
-  display: block; 
-  padding: 15px; 
-  border-bottom: 1px solid rgba(255,255,255,0.1); 
-}
 
-/* 4. MAIN CONTENT */
-.page {
-  flex: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
+  // 5. CONTACT FORM HANDLER (Web3Forms)
+  function initContactForm() {
+    const form = document.querySelector("form[action*='web3forms']");
+    if (form) {
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector("button[type='submit']");
+        const originalText = btn.textContent;
+        
+        btn.textContent = "Sending...";
+        btn.disabled = true;
 
-.hero { text-align: center; margin-bottom: 50px; }
-.hero h1 { font-size: 38px; color: var(--hsw-green); margin-bottom: 15px; }
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          });
+          
+          if (response.ok) {
+            alert("✅ Message Sent Successfully!");
+            form.reset();
+          } else {
+            throw new Error("Failed to send");
+          }
+        } catch (error) {
+          alert("❌ Error sending message. Please try again.");
+        } finally {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      });
+    }
+  }
+  document.addEventListener("DOMContentLoaded", initContactForm);
 
-/* 5. CARDS & ACCORDIONS */
-.card {
-  background: var(--white);
-  border-radius: 8px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: var(--shadow);
-  border: 1px solid #e0e0e0;
-  border-left: 5px solid var(--hsw-green);
-}
 
-.card h2 { color: var(--hsw-anthrazit); margin-top: 0; font-size: 24px; }
-
-/* Accordion Styling */
-.accordion-item { border-bottom: 1px solid #eee; }
-.accordion-header {
-  padding: 15px 0;
-  cursor: pointer;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--hsw-anthrazit);
-}
-.accordion-header:hover { color: var(--hsw-green); }
-.accordion-header::after { content: '+'; font-size: 20px; color: var(--hsw-green); }
-.accordion-header.active::after { content: '−'; }
-
-.accordion-content {
-  display: none;
-  padding: 10px 0 20px;
-  color: #555;
-}
-.accordion-content.active { display: block; animation: fadeIn 0.3s; }
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-/* 6. BUTTONS (ADDED) */
-.btn {
-  display: inline-block;
-  background-color: var(--hsw-anthrazit);
-  color: var(--white) !important;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none !important;
-  font-weight: 700;
-  transition: background-color 0.2s, transform 0.1s;
-  cursor: pointer;
-  border: none;
-}
-.btn:hover { background-color: #000; transform: translateY(-2px); }
-
-/* Green Button Variant */
-.btn-green { background-color: var(--hsw-green); }
-.btn-green:hover { background-color: #267326; }
-
-/* Tool Links (Inside Lists) */
-.tool-link {
-  font-weight: 700;
-  border-bottom: 1px solid rgba(51, 153, 51, 0.3);
-  padding-bottom: 1px;
-}
-.tool-link:hover { border-bottom-color: var(--hsw-green); }
-
-/* 7. REAL UNIVERSITY FOOTER */
-.footer {
-  background-color: var(--hsw-anthrazit);
-  color: #ccc;
-  padding: 50px 20px 20px;
-  font-size: 14px;
-  margin-top: auto;
-  border-top: 6px solid var(--hsw-green);
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer h3 { color: white; font-size: 16px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-.footer ul { list-style: none; padding: 0; }
-.footer li { margin-bottom: 10px; }
-.footer a { color: #ccc; font-weight: 400; }
-.footer a:hover { color: white; text-decoration: underline; }
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  color: #777;
-}
-
-/* 8. FORM ELEMENTS */
-form input, form select, form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
-}
-
-/* 9. RESPONSIVE */
-@media (max-width: 768px) {
-  .nav { display: none; } /* Hide desktop nav */
-  .hamburger { display: block; } /* Show hamburger */
+  // 6. SMOOTH SCROLL
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+        
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          // Scroll with offset for header
+          const offset = 100; 
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
   
-  .topbar { padding: 0 15px; }
-  .brand-logo { height: 40px; }
-  .brand-title { font-size: 15px; }
-  .brand-subtitle { display: none; } /* Save space on mobile */
-  
-  .footer-inner { grid-template-columns: 1fr; gap: 30px; }
-}
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+          
+          // Open accordion if target is inside one
+          const parentContent = target.closest(".accordion-content");
+          if (parentContent) {
+            parentContent.classList.add("active");
+            parentContent.previousElementSibling.classList.add("active");
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener("DOMContentLoaded", initSmoothScroll);
+
+
+  // 7. EXTERNAL LINK SECURITY
+  function secureExternalLinks() {
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      link.setAttribute("rel", "noopener noreferrer");
+    });
+  }
+  document.addEventListener("DOMContentLoaded", secureExternalLinks);
+
+})();

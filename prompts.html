@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Prompts Library | AI Job Search Support | Hochschule Wismar</title>
-  <meta name="description" content="Copy-paste ChatGPT prompts for CVs, cover letters, and interviews." />
+  <title>AI Prompts | AI Job Search Support | Hochschule Wismar</title>
   
-  <!-- CORRECT CSS PATH -->
   <link rel="stylesheet" href="./css/style.css" />
-  
   <style>
-    /* Specific styles for Prompt Boxes */
     .prompt-box {
-      background-color: #f8f9fa;
+      background: #f8f9fa;
       border: 1px solid #ddd;
       border-radius: 6px;
       padding: 15px;
@@ -20,12 +16,11 @@
       font-size: 14px;
       color: #333;
       margin-top: 10px;
-      white-space: pre-wrap; /* Preserves formatting */
+      white-space: pre-wrap;
       position: relative;
     }
-
     .copy-btn {
-      background-color: var(--hsw-green);
+      background: var(--hsw-green);
       color: white;
       border: none;
       padding: 5px 10px;
@@ -37,10 +32,7 @@
       right: 10px;
       font-weight: bold;
     }
-
-    .copy-btn:hover {
-      background-color: #267326;
-    }
+    .copy-btn:hover { background: #267326; }
   </style>
 </head>
 <body>
@@ -48,212 +40,146 @@
   <!-- HEADER -->
   <header class="topbar">
     <div class="topbar-inner">
-      <div>
-        <span class="brand-title">Hochschule Wismar</span>
-        <span class="brand-subtitle">Business Faculty</span>
-      </div>
+      <a href="./index.html" class="brand">
+        <img src="./assets/logo.png" alt="HS Wismar Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">Hochschule Wismar</span>
+          <span class="brand-subtitle">University of Applied Sciences</span>
+        </div>
+      </a>
+
       <nav class="nav">
         <a class="nav-link" href="./index.html">Home</a>
         <a class="nav-link" href="./tools.html">AI Tools</a>
         <a class="nav-link active" href="./prompts.html">AI Prompts</a>
         <a class="nav-link" href="./guidelines.html">Guidelines</a>
-        <a class="nav-link" href="./faqs.html">FAQs</a>
+        <a class="nav-link" href="./about.html">About Us</a>
         <a class="nav-link" href="./contact.html">Contact</a>
       </nav>
+
+      <div class="hamburger">☰</div>
     </div>
   </header>
 
+  <div class="mobile-nav">
+    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link active" href="./tools.html">AI Tools</a>
+    <a class="nav-link" href="./prompts.html">AI Prompts</a>
+    <a class="nav-link" href="./guidelines.html">Guidelines</a>
+    <a class="nav-link" href="./about.html">About Us</a>
+    <a class="nav-link" href="./contact.html">Contact</a>
+  </div>
+
   <main class="page">
-    
-    <!-- HERO -->
     <section class="hero">
       <h1>AI Prompts Library</h1>
-      <p>Tested prompts for ChatGPT, Claude, and Gemini. Copy, paste, and fill in the bracketed [details].</p>
+      <p>Copy-paste prompts for ChatGPT, Claude, and Gemini.</p>
     </section>
 
-    <!-- 1. WORKING STUDENT PROMPTS -->
+    <!-- 1. WORKING STUDENT -->
     <div class="card">
       <h2>🎓 Working Student (Werkstudent)</h2>
       
       <div class="accordion-item">
-        <div class="accordion-header">CV Rewrite (No Experience)</div>
+        <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
-          <p><strong>Use this when:</strong> You have no work experience but want to highlight academic projects.</p>
           <div class="prompt-box" id="p1">
-Act as a German recruiter. I am a Master's student in International Management applying for a Werkstudent position in [Field/Industry]. 
-
-I have no direct work experience, but I have these academic skills:
-- [Skill 1]
-- [Skill 2]
-- [Project Name & Description]
-
-Please rewrite my CV summary and experience section to highlight my "trainability," "reliability," and "academic achievements." Use professional German business language (or English if specified).
+I am a Master's student in [Major] at a German university looking for a Werkstudent job. 
+List 10 job titles I should search for that value my skills in [Skill 1, Skill 2] but don't require C1 German.
             <button class="copy-btn" onclick="copyToClipboard('p1')">Copy</button>
           </div>
         </div>
       </div>
-
+      
       <div class="accordion-item">
-        <div class="accordion-header">Cover Letter (Short Email)</div>
+        <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
-          <p><strong>Use this when:</strong> Sending an application via email.</p>
           <div class="prompt-box" id="p2">
-Draft a professional, concise email application (Anschreiben) for a Werkstudent role at [Company Name]. 
-
-My details:
-- Name: [Your Name]
-- Degree: Master International Management
-- Key motivation: [Why you want this job]
-- Availability: 20 hours/week
-
-Tone: Formal, polite, and eager to learn. Keep it under 200 words.
+Act as a German recruiter. Rewrite my CV summary to highlight my "academic projects" since I have no work experience. 
+Focus on: Reliability, English fluency, and Technical skills.
             <button class="copy-btn" onclick="copyToClipboard('p2')">Copy</button>
           </div>
         </div>
       </div>
-    </div>
 
-
-    <!-- 2. INTERNSHIP PROMPTS -->
-    <div class="card">
-      <h2>💼 Internship (Praktikum)</h2>
-      
       <div class="accordion-item">
-        <div class="accordion-header">Mandatory Internship (Pflichtpraktikum)</div>
+        <div class="accordion-header">3. Interview</div>
         <div class="accordion-content">
           <div class="prompt-box" id="p3">
-I am applying for a mandatory internship (Pflichtpraktikum) in Germany. 
-My profile:
-- Degree: [Degree Name]
-- Specialization: [Specialization]
-- German Level: [A1/B1/C1]
-
-Please create a one-page, ATS-friendly CV structure. Translate my academic coursework [Course 1, Course 2] into practical skills that a German recruiter would value. Explicitly mention that this is a mandatory internship (exempt from minimum wage).
+I have an interview for a [Role] at [Company]. Ask me one common behavioral question in German, then critique my answer.
             <button class="copy-btn" onclick="copyToClipboard('p3')">Copy</button>
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <div class="accordion-header">Rejection Analysis</div>
+        <div class="accordion-header">4. Onboarding</div>
         <div class="accordion-content">
           <div class="prompt-box" id="p4">
-Here is my current CV: [Paste CV Text]
-Here is the job description I applied for: [Paste JD Text]
-
-I was rejected. Please analyze my CV against this job description. 
-1. Identify missing keywords.
-2. Point out any unclear elements for a German recruiter.
-3. Suggest 3 concrete improvements to increase my chances next time.
+Draft a polite email to my manager asking for feedback on my first week tasks. Keep it professional but friendly (German).
             <button class="copy-btn" onclick="copyToClipboard('p4')">Copy</button>
           </div>
         </div>
       </div>
     </div>
 
-
-    <!-- 3. THESIS PROMPTS -->
+    <!-- 2. INTERNSHIP -->
     <div class="card">
-      <h2>📖 Master Thesis</h2>
+      <h2>💼 Internship (Praktikum)</h2>
       
       <div class="accordion-item">
-        <div class="accordion-header">Company Outreach Email</div>
+        <div class="accordion-header">1. Orientation</div>
         <div class="accordion-content">
           <div class="prompt-box" id="p5">
-Draft a cold email to a Head of Department at [Company Name] proposing a Master's Thesis collaboration.
-
-My topic idea: [Topic]
-Value for the company: [How it solves a problem for them]
-My background: [Your Degree/Skills]
-
-Focus on the business value of the thesis, not just the academic requirement. Keep it professional and respectful of their time.
+What are the top 5 German cities for internships in [Industry]? Include average cost of living vs stipend.
             <button class="copy-btn" onclick="copyToClipboard('p5')">Copy</button>
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <div class="accordion-header">Topic Brainstorming</div>
+        <div class="accordion-header">2. Application</div>
         <div class="accordion-content">
           <div class="prompt-box" id="p6">
-I am a student in [Field]. I want to write my Master's thesis with a company in the [Industry] sector. 
-Suggest 5 thesis topics that are:
-1. Relevant to current industry trends (e.g., AI, Sustainability, Digitalization).
-2. Practical for a company to support.
-3. Solvable within 4-6 months.
+Write a cover letter for a mandatory internship (Pflichtpraktikum). Emphasize that I am exempt from minimum wage and available for 6 months.
             <button class="copy-btn" onclick="copyToClipboard('p6')">Copy</button>
           </div>
         </div>
       </div>
-    </div>
-
-
-    <!-- 4. FULL-TIME PROMPTS -->
-    <div class="card">
-      <h2>🚀 Full-Time Job</h2>
       
-      <div class="accordion-item">
-        <div class="accordion-header">Salary Negotiation</div>
-        <div class="accordion-content">
-          <div class="prompt-box" id="p7">
-I have received a job offer for [Role] in [City]. The offered salary is [Amount]. 
-Market research shows the average is [Higher Amount].
-
-Draft a polite but firm email to HR negotiating for a higher salary. Highlight my specific skills [Skill 1, Skill 2] and previous internship experience as justification. Maintain a collaborative tone.
-            <button class="copy-btn" onclick="copyToClipboard('p7')">Copy</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <div class="accordion-header">Interview Prep (Behavioral)</div>
-        <div class="accordion-content">
-          <div class="prompt-box" id="p8">
-I have an interview for a [Role] at a [Company Type]. 
-Please act as a hiring manager. Ask me one behavioral question based on the STAR method (Situation, Task, Action, Result). 
-Wait for my answer, then grade it and suggest improvements for clarity and impact.
-            <button class="copy-btn" onclick="copyToClipboard('p8')">Copy</button>
-          </div>
-        </div>
-      </div>
+      <!-- Add Phases 3 & 4 similarly if needed -->
     </div>
 
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Hochschule Wismar. University of Applied Sciences: Technology, Business and Design.</p>
+    <div class="footer-inner">
+      <div>
+        <h3>Kontakt</h3>
+        <p>Hochschule Wismar<br>Philipp-Müller-Straße 14<br>23966 Wismar</p>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li></ul>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul><li><a href="#">LSF Portal</a></li><li><a href="#">Stud.IP</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Hochschule Wismar.</p></div>
   </footer>
 
-  <!-- CORRECT JS PATH -->
   <script src="./js/main.js"></script>
-
-  <!-- COPY TO CLIPBOARD SCRIPT -->
   <script>
-    function copyToClipboard(elementId) {
-      // Get the text from the prompt box (excluding the button text)
-      const container = document.getElementById(elementId);
-      const clone = container.cloneNode(true);
-      const btn = clone.querySelector('button');
-      if (btn) btn.remove(); // Remove button from copied text
-      
-      const text = clone.innerText.trim();
-      
-      // Copy to clipboard
-      navigator.clipboard.writeText(text).then(() => {
-        // Change button text temporarily
-        const originalBtn = container.querySelector('button');
-        const originalText = originalBtn.innerText;
-        originalBtn.innerText = "Copied!";
-        originalBtn.style.backgroundColor = "#2f3229"; // Dark grey
-        
-        setTimeout(() => {
-          originalBtn.innerText = originalText;
-          originalBtn.style.backgroundColor = ""; // Reset to CSS default
-        }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy: ', err);
-      });
+    function copyToClipboard(id) {
+      const el = document.getElementById(id);
+      const text = el.innerText.replace("Copy", "").trim();
+      navigator.clipboard.writeText(text);
+      const btn = el.querySelector("button");
+      btn.innerText = "Copied!";
+      setTimeout(() => btn.innerText = "Copy", 2000);
     }
   </script>
 </body>
